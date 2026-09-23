@@ -26,8 +26,10 @@ export default function App() {
 
   const irA = (paso: Estado['paso']) => set((s) => ({ ...s, paso }));
 
+  // desde el paso 3 se genera con el ranking tal como se ve: se descartan los ajustes de "¿Qué no te gustó?"
   const generar = () =>
-    set((s) => {
+    set((s0) => {
+      const s = { ...s0, ajustes: {} };
       const r = correrMotor(s);
       return { ...s, paso: 4, opciones: r.opciones, avisos: r.avisos, opcion: 0, vistos: r.opciones.map((h) => h.id), ronda: 1 };
     });

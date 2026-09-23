@@ -50,7 +50,7 @@ La app nunca se conecta directo a Oracle. Cuando TI entregue la oferta real, bas
 ## Publicar en Vercel
 
 1. Entrar a [vercel.com](https://vercel.com) con la cuenta de GitHub.
-2. **Add New → Project** → importar `horarios-cesa`.
+2. **Add New → Project** → importar `Hackaton-CESA`.
 3. Vercel detecta Vite solo (build `npm run build`, salida `dist`). **Deploy.**
 4. Cada `git push` a `main` vuelve a publicar.
 
