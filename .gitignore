@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 dist-demo
+
+# Datos generados por scripts/generar-datos.mjs (se crean solos con dev, build y test)
+src/datos/pensum.json
+src/datos/oferta.json
+
+# Configuración personal de Claude Code
+.claude/
