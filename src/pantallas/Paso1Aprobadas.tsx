@@ -45,10 +45,19 @@ export function Paso1Aprobadas({ e, set, seguir }: Props) {
     if (st === 'disponible') nDisp++;
   }
 
+  // si los prerrequisitos son todo el pensum hasta cierto semestre (Práctica 1), se resume en vez de listar cada materia
+  const hastaSem = (m: Materia) => {
+    const n = Math.max(0, ...m.prerrequisitos.map((p) => porId.get(p)?.semestre ?? 0));
+    const todas = PENSUM.materias.filter((x) => x.semestre <= n);
+    return n > 1 && todas.length === m.prerrequisitos.length && todas.every((x) => m.prerrequisitos.includes(x.id)) ? n : 0;
+  };
+
   const hint = hov
-    ? hov.prerrequisitos.length
-      ? `${hov.nombre} requiere: ${hov.prerrequisitos.map((p) => porId.get(p)?.nombre).join(', ')}.`
-      : `${hov.nombre} no tiene prerrequisitos.`
+    ? hastaSem(hov)
+      ? `${hov.nombre} requiere aprobar todo hasta ${ROMANOS[hastaSem(hov) - 1]} semestre: materias, idiomas, bienestar y seminario.`
+      : hov.prerrequisitos.length
+        ? `${hov.nombre} requiere: ${hov.prerrequisitos.map((p) => porId.get(p)?.nombre).join(', ')}.`
+        : `${hov.nombre} no tiene prerrequisitos.`
     : 'Pasa el mouse por una materia para ver sus prerrequisitos.';
 
   const celda = (m: Materia, pill = false) => {
