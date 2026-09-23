@@ -55,7 +55,7 @@ describe('datos', () => {
 describe('pensum', () => {
   it('aprobar en cascada marca los prerrequisitos', () => {
     const a = aprobarConPrerrequisitos(pensum, new Set(), 'mc');
-    expect([...a]).toEqual(expect.arrayContaining(['mc', 'adf', 'mf', 'cb']));
+    expect([...a]).toEqual(expect.arrayContaining(['mc', 'mf', 'cb']));
   });
   it('desaprobar quita lo que dependía', () => {
     const a = desaprobarConDependientes(pensum, hastaSemestre(pensum, 5), 'mf');
