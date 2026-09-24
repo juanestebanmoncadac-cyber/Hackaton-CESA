@@ -126,6 +126,14 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
     }
   });
 
+  it('un grupo fijado no ignora la hora mínima', () => {
+    const fijo = oferta.grupos.find((g) => g.materiaId === 'mtd' && g.sesiones.some((s) => s.inicio < 9))!;
+    const sol: SolicitudMateria = { materiaId: 'mtd', prioridad: 'necesito', profesores: {}, nrcFijado: fijo.nrc };
+    const resultado = generarHorarios(entrada({ solicitudes: [sol] }, { horaMinima: 9 }));
+    expect(resultado.avisos.some((a) => a.includes('incumple tu hora mínima'))).toBe(true);
+    expect(resultado.opciones.every((h) => !h.asignaciones.some((a) => a.grupo.nrc === fijo.nrc))).toBe(true);
+  });
+
   it('avisa si dos grupos fijados se cruzan', () => {
     const par = oferta.grupos.filter((g) => g.materiaId === 'mtd').flatMap((g1) =>
       oferta.grupos.filter((g2) => g2.materiaId === 'mc' && gruposSeCruzan(g1, g2)).map((g2) => [g1, g2] as const),
