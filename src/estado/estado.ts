@@ -9,6 +9,7 @@ import { disponibles, hastaSemestre } from '../motor/pensum';
 
 export const PENSUM = pensumJson as Pensum;
 export const OFERTA = ofertaJson as Oferta;
+const DATOS_VERSION = `${OFERTA.periodo}:${OFERTA.generadoEn}:${OFERTA.grupos.map((g) => g.nrc).join(',')}`;
 
 export interface EstadoMateria {
   sel: boolean;
@@ -18,6 +19,7 @@ export interface EstadoMateria {
 }
 
 export interface Estado {
+  datosVersion: string;
   paso: 1 | 2 | 3 | 4;
   aprobadas: string[];
   materias: Record<string, EstadoMateria>;
@@ -48,15 +50,21 @@ function inicial(): Estado {
   };
   for (const id of disp) {
     const [sel, prioridad] = defecto[id] ?? [false, 'gustaria'];
-    materias[id] = { sel, prioridad, actividades: id === 'b6' ? ['Tenis', 'Golf', 'Cata de vino'] : [] };
+    const tipo = PENSUM.materias.find((m) => m.id === id)?.tipo;
+    const materiaOferta = tipo === 'bienestar' ? 'BIENESTAR' : tipo === 'electivaSH' ? 'ELECTIVA_SH' : id;
+    const disponible = tipo === 'sinHorario' || OFERTA.grupos.some((g) => g.materiaId === materiaOferta);
+    materias[id] = {
+      sel: sel && disponible,
+      prioridad,
+      actividades: id === 'b6' ? ['Tenis', 'Golf'].filter((a) => OFERTA.grupos.some((g) => g.materiaId === 'BIENESTAR' && g.actividad === a)) : [],
+    };
   }
-  const fijo = OFERTA.grupos.find((g) => g.materiaId === 'mtd' && g.profesor === 'C. Herrera' && g.grupo === 'Grupo 1');
-  if (materias.mtd && fijo) materias.mtd.nrcFijado = fijo.nrc;
   return {
+    datosVersion: DATOS_VERSION,
     paso: 1,
     aprobadas: [...aprob],
     materias,
-    profesores: { 'C. Herrera': 'preferido', 'A. Salazar': 'preferido', 'L. Rincón': 'evitar', 'N. Acosta': 'preferido', 'J. Pardo': 'evitar' },
+    profesores: {},
     ranking: ['profesores', 'huecos', 'noMadrugar', 'diasLibres', 'terminarTemprano'],
     toleranciaHuecos: 'hasta2',
     horaMinima: 7,
@@ -71,12 +79,45 @@ function inicial(): Estado {
   };
 }
 
-const CLAVE = 'horarios-cesa:v1';
+const CLAVE = 'horarios-cesa:v2-backtest';
 
 export function cargar(): Estado {
   try {
     const raw = localStorage.getItem(CLAVE);
-    if (raw) return { ...inicial(), ...JSON.parse(raw) };
+    if (raw) {
+      const previo = JSON.parse(raw) as Partial<Estado>;
+      const base = inicial();
+      if (previo.datosVersion === DATOS_VERSION) return { ...base, ...previo };
+      const nrcs = new Map(OFERTA.grupos.map((g) => [g.nrc, g]));
+      const actividades = new Set(OFERTA.grupos.map((g) => g.actividad).filter(Boolean));
+      const profesores = new Set(OFERTA.grupos.map((g) => g.profesor).filter(Boolean));
+      const materias: Estado['materias'] = {};
+      for (const [id, materia] of Object.entries(previo.materias ?? {})) {
+        if (!PENSUM.materias.some((m) => m.id === id)) continue;
+        materias[id] = {
+          ...materia,
+          sel: materia.sel && (PENSUM.materias.find((m) => m.id === id)?.tipo === 'sinHorario' ||
+            OFERTA.grupos.some((g) => g.materiaId === id ||
+              (id.startsWith('b') && /^b\d$/.test(id) && g.materiaId === 'BIENESTAR') ||
+              (id.startsWith('es') && /^es\d$/.test(id) && g.materiaId === 'ELECTIVA_SH'))),
+          nrcFijado: nrcs.get(materia.nrcFijado ?? '')?.materiaId === id ? materia.nrcFijado : undefined,
+          actividades: (materia.actividades ?? []).filter((a) => actividades.has(a)),
+        };
+      }
+      return {
+        ...base,
+        ...previo,
+        datosVersion: DATOS_VERSION,
+        paso: previo.paso === 4 ? 2 : (previo.paso ?? 1),
+        materias,
+        profesores: Object.fromEntries(Object.entries(previo.profesores ?? {}).filter(([p]) => profesores.has(p))),
+        seleccion: {
+          pertenece: !!(previo.seleccion?.pertenece && nrcs.get(previo.seleccion.nrc ?? '')?.esSeleccion),
+          nrc: nrcs.get(previo.seleccion?.nrc ?? '')?.esSeleccion ? previo.seleccion?.nrc : undefined,
+        },
+        opciones: [], avisos: [], opcion: 0, vistos: [], ronda: 1,
+      };
+    }
   } catch {
     /* sin almacenamiento: seguimos con el estado inicial */
   }
