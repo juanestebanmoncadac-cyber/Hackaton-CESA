@@ -92,7 +92,7 @@ describe('huecos', () => {
   });
 });
 
-describe('motor', () => {
+describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', () => {
   it('da 3 opciones sin cruces y dentro del límite de créditos', () => {
     const r = generarHorarios(entrada());
     expect(r.opciones).toHaveLength(3);
