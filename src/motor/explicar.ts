@@ -1,7 +1,7 @@
 /**
  * Explicación en lenguaje natural de cada horario ("¿Por qué este?").
- * Versión sin IA (plantillas). Si se configura GEMINI_API_KEY en Vercel,
- * el frontend puede pedir una versión más natural a /api/explicar.
+ * Versión sin IA (plantillas). Una versión con Gemini está pendiente
+ * (ver "Pendiente" en el README); hoy no existe ningún endpoint.
  */
 import type { Criterio, Dia, Horario, Pensum, Preferencias } from '../types';
 
@@ -61,7 +61,8 @@ export function explicar(h: Horario, pref: Preferencias, pensum: Pensum, mejor?:
       );
     }
     if (c === 'huecos') frases.push(m.horasHueco === 0 ? 'no tienes huecos' : `solo tienes ${m.horasHueco.toString().replace('.', ',')} h de hueco en la semana`);
-    if (c === 'noMadrugar' && m.entradaMasTemprana !== null) frases.push(`nunca entras antes de las ${fmtHora(m.entradaMasTemprana)}`);
+    // solo se presume cuando de verdad evita madrugar (7:00 es la primera franja posible)
+    if (c === 'noMadrugar' && m.entradaMasTemprana !== null && m.entradaMasTemprana >= 8) frases.push(`nunca entras antes de las ${fmtHora(m.entradaMasTemprana)}`);
     if (c === 'diasLibres') {
       const libres = m.diasLibres.filter((d) => !pref.diasBloqueados.includes(d)).map((d) => NOMBRE_DIA[d]);
       frases.push(libres.length ? `te queda${libres.length > 1 ? 'n' : ''} libre${libres.length > 1 ? 's' : ''} ${listaNatural(libres)}` : 'vas todos los días hábiles');
@@ -69,13 +70,14 @@ export function explicar(h: Horario, pref: Preferencias, pensum: Pensum, mejor?:
     if (c === 'terminarTemprano' && m.salidaMasTarde !== null) frases.push(`sales a más tardar a las ${fmtHora(m.salidaMasTarde)}`);
   }
 
-  let texto = cap(listaNatural(frases.filter(Boolean))) + '.';
+  const dichas = frases.filter(Boolean);
+  let texto = dichas.length ? cap(listaNatural(dichas)) + '.' : '';
 
-  if (m.profesEvitadosUsados) texto += ` Ojo: incluye ${m.profesEvitadosUsados === 1 ? 'un profesor' : m.profesEvitadosUsados + ' profesores'} que marcaste para evitar, porque no había otro grupo compatible.`;
+  if (m.profesEvitadosUsados) texto += ` Ojo: incluye ${m.profesEvitadosUsados === 1 ? 'un profesor' : m.profesEvitadosUsados + ' profesores'} que marcaste para evitar.`;
 
   if (h.materiasFuera.length) {
     const nombres = h.materiasFuera.map((id) => pensum.materias.find((x) => x.id === id)?.nombre ?? id);
-    texto += ` Deja fuera ${listaNatural(nombres)} para respetar tus reglas y tu prioridad principal.`;
+    texto += ` Deja fuera ${listaNatural(nombres)}: no cabe con tus reglas (cruces, horario, días o máximo de créditos) o solo cabía con un profesor que quieres evitar.`;
   }
 
   if (mejor && mejor.id !== h.id) {
@@ -91,5 +93,5 @@ export function explicar(h: Horario, pref: Preferencias, pensum: Pensum, mejor?:
       });
     if (cambios.length) texto += ` A diferencia de la opción 1, ves ${listaNatural(cambios)}.`;
   }
-  return texto;
+  return texto.trim() || 'Es la combinación sin cruces que mejor cumple tus prioridades con las materias que pediste.';
 }

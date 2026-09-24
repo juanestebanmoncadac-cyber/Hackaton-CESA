@@ -20,8 +20,8 @@ npm run build:demo # un solo archivo dist-demo/index.html para compartir
 
 1. **Aprobadas** — pensum interactivo con el diseño de la malla oficial. Atajo "marcar hasta el semestre N", prerrequisitos en cascada y tres estados (aprobada, disponible, bloqueada). Al pasar el mouse se resaltan los prerrequisitos.
 2. **Materias** — solo las disponibles. "La necesito" o "Me gustaría"; profesores con ★ preferido / ✕ evitar; al pasar el mouse se ven los grupos de cada profesor y se puede **fijar un grupo (candado)**. Bienestar se elige por actividad; las selecciones deportivas solo si el estudiante declara que pertenece.
-3. **Preferencias** — orden de 5 prioridades (la primera manda; las demás desempatan), tolerancia a huecos, hora mínima, días bloqueados y rango mínimo/máximo de créditos (0–30). Si el máximo supera 21, se avisa que el sobrecupo depende del promedio y debe verificarse con CESA.
-4. **Horarios** — 3 opciones con horario semanal, lista de profesores, métricas y "¿Por qué este?". **Ver otras opciones** pasa a las siguientes del ranking sin repetir horarios que se vean iguales (compara franjas, no NRC); si el estudiante dice qué no le gustó, solo entonces se ajustan las prioridades. Descargar imagen y copiar NRC.
+3. **Preferencias** — orden de 5 prioridades (la primera manda entre horarios con las mismas materias; las demás desempatan), tolerancia a huecos, hora mínima, días bloqueados y máximo de créditos (1–30). Si el máximo supera 21, se avisa que el sobrecupo depende del promedio y debe verificarse con CESA.
+4. **Horarios** — 3 opciones con horario semanal, lista de profesores, métricas y "¿Por qué este?". **Ver otras opciones** pasa a las siguientes del ranking sin repetir horarios que se vean iguales (compara franjas, no NRC); si el estudiante marca un profesor que no le gustó, pasa a "evitar". Para cambiar prioridades, vuelve al paso 3. Descargar imagen y copiar NRC.
 
 ## Estructura (una carpeta por dueño para no pisarnos)
 
@@ -37,11 +37,11 @@ npm run build:demo # un solo archivo dist-demo/index.html para compartir
 
 `generarHorarios({ solicitudes, oferta, preferencias, pensum, excluir? }) → { opciones, total, avisos }`
 
-- **Reglas duras** (descartan): cruces, hora mínima, días bloqueados, grupos fijados, máximo de créditos elegido por el estudiante y selección declarada. El mínimo de créditos es flexible: si ninguna combinación lo alcanza, se muestran las más cercanas con un aviso.
+- **Reglas duras** (descartan): cruces, hora mínima, días bloqueados, grupos fijados, máximo de créditos elegido por el estudiante y selección declarada. El motor también acepta un mínimo de créditos flexible (`creditosMinimos`), pero su control está oculto hasta que respete "necesito" y "evitar".
 - **Puntaje por niveles** (un nivel siempre gana a los de abajo): incluir las "necesito" → no usar profesores "evitar" → incluir las "me gustaría" que quepan → la prioridad principal del estudiante → las demás prioridades (profesores, huecos, madrugar, días libres, terminar temprano) solo desempatan.
 - **Huecos**: penalización creciente (1 h casi no pesa, más de 3 h pesa mucho); el almuerzo de 12:00 a 2:00 no cuenta.
 - **Nunca deja sin resultados**: si algo es imposible, lo deja fuera y lo explica en `avisos`.
-- **Diversidad**: las 3 opciones difieren en al menos 2 materias y se ven distintas (entrada, días libres, huecos).
+- **Diversidad**: las 3 opciones procuran diferir en al menos 2 materias (si no alcanza, en 1) y verse distintas (entrada, días libres, huecos), sin alejarse de la prioridad principal.
 
 ## Datos reales (Oracle)
 

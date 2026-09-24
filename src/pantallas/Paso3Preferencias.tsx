@@ -26,12 +26,8 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
     });
   const toggleDia = (d: Dia) =>
     set((s) => ({ ...s, diasBloqueados: s.diasBloqueados.includes(d) ? s.diasBloqueados.filter((x) => x !== d) : [...s.diasBloqueados, d] }));
-  // mover un extremo empuja al otro para que siempre min ≤ max
-  const cambiarCreditos = (extremo: 'min' | 'max', v: number) =>
-    set((s) => ({
-      ...s,
-      creditos: extremo === 'min' ? { min: v, max: Math.max(v, 1, s.creditos.max) } : { min: Math.min(v, s.creditos.min), max: v },
-    }));
+  // el mínimo de créditos está oculto por ahora: podía pasar por encima de "necesito" y "evitar"
+  const cambiarMaximo = (v: number) => set((s) => ({ ...s, creditos: { min: Math.min(s.creditos.min, v), max: v } }));
   const limite = PENSUM.limiteCreditosSemestre;
   const sobrecupo = e.creditos.max > limite;
 
@@ -48,7 +44,7 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
         <section className="card">
           <div className="sec-head">
             <h2>Lo que prefiero</h2>
-            <span className="note">La primera manda; las demás desempatan</span>
+            <span className="note">La primera manda entre horarios con las mismas materias</span>
           </div>
           <ol className="rank">
             {e.ranking.map((c, i) => {
@@ -100,15 +96,11 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
             <span className="note">Úsalo para trabajo, prácticas u otros compromisos fijos.</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontWeight: 700, fontSize: 14 }}>Créditos que quiero ver: de {e.creditos.min} a {e.creditos.max}</span>
+            <span style={{ fontWeight: 700, fontSize: 14 }}>Máximo de créditos que quiero ver: {e.creditos.max}</span>
             <div className="rango">
-              <label htmlFor="cr-min">Mínimo</label>
-              <input id="cr-min" type="range" min={0} max={CREDITOS_TOPE} step={1} value={e.creditos.min}
-                aria-valuetext={`${e.creditos.min} créditos`} onChange={(ev) => cambiarCreditos('min', Number(ev.target.value))} />
-              <output htmlFor="cr-min">{e.creditos.min}</output>
               <label htmlFor="cr-max">Máximo</label>
               <input id="cr-max" type="range" min={1} max={CREDITOS_TOPE} step={1} value={e.creditos.max}
-                aria-valuetext={`${e.creditos.max} créditos`} onChange={(ev) => cambiarCreditos('max', Number(ev.target.value))} />
+                aria-valuetext={`${e.creditos.max} créditos`} onChange={(ev) => cambiarMaximo(Number(ev.target.value))} />
               <output htmlFor="cr-max">{e.creditos.max}</output>
             </div>
             {sobrecupo ? (

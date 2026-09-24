@@ -83,9 +83,9 @@ export function Paso4Resultado({ e, set, otras, volver }: Props) {
     <>
       <div className="head">
         <div>
-          <h1>Tus {e.opciones.length === 1 ? 'opción' : `${e.opciones.length} opciones`} de horario</h1>
+          <h1>{e.opciones.length === 1 ? 'Tu opción' : `Tus ${e.opciones.length} opciones`} de horario</h1>
           <p>
-            Todas sin cruces.{credTot ? ` Esta opción tiene ${credTot} créditos.` : ''} Compara y quédate con la que más te sirva.
+            {e.opciones.length === 1 ? 'Sin cruces.' : 'Todas sin cruces.'}{credTot ? ` Esta opción tiene ${credTot} créditos.` : ''} Compara y quédate con la que más te sirva.
             {e.ronda > 1 && ` (Ronda ${e.ronda}: opciones nuevas.)`}
           </p>
         </div>

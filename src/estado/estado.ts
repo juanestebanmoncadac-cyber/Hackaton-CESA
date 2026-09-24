@@ -54,7 +54,7 @@ export interface Estado {
   toleranciaHuecos: ToleranciaHuecos;
   horaMinima: number;
   diasBloqueados: Dia[];
-  /** rango de créditos que el estudiante acepta ver (más de 21 = sobrecupo, depende del promedio) */
+  /** créditos que el estudiante acepta ver (más de 21 = sobrecupo, depende del promedio); min está oculto y no se usa por ahora */
   creditos: { min: number; max: number };
   seleccion: { pertenece: boolean; nrc?: string };
   ajustes: Partial<Record<Criterio, number>>;
@@ -199,8 +199,9 @@ export function preferenciasDe(e: Estado): Preferencias {
     horaMinima: e.horaMinima,
     diasBloqueados: e.diasBloqueados,
     seleccionNrc: e.seleccion.pertenece ? e.seleccion.nrc : undefined,
-    ajustes: e.ajustes,
+    // ajustes no se envían: los chips que los creaban se quitaron, y así la prioridad
+    // principal es siempre la primera del ranking que el estudiante ve
     limiteCreditos: e.creditos.max,
-    creditosMinimos: e.creditos.min,
+    // creditosMinimos no se envía: el control del mínimo está oculto hasta que respete "necesito" y "evitar"
   };
 }

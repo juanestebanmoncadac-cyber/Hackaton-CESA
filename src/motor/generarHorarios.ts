@@ -11,8 +11,8 @@
  * 3. Puntaje por niveles (un nivel alto siempre gana a los de abajo):
  *    "necesito" incluidas > profesores "evitar" no usados > "me gustaría"
  *    incluidas > prioridad principal > las demás prioridades (desempate).
- * 4. Diversidad: las 3 opciones se diferencian en al menos 2 materias,
- *    comparando lo que el estudiante ve (franjas y actividad), no el NRC.
+ * 4. Diversidad: las 3 opciones procuran diferenciarse en al menos 2 materias
+ *    (si no alcanza, en 1), comparando franjas y actividad, no el NRC.
  *
  * No usa red ni IA: es gratis, instantáneo y garantiza cero cruces.
  */
@@ -183,7 +183,11 @@ export function criterioPrincipal(pref: Preferencias): Criterio {
   return pref.ranking.reduce((mejor, c) => (w[c] > w[mejor] ? c : mejor), pref.ranking[0]);
 }
 
-/** lo que el estudiante ve de un grupo, sin el NRC: materia, actividad, profesor y franjas */
+/**
+ * Lo que el estudiante ve de un grupo, sin el NRC: materia, actividad, profesor y franjas.
+ * Si cambias este formato (o el de firmaHorario), sube MOTOR_VERSION en
+ * src/estado/estado.ts para que se descarten los "vistos" guardados.
+ */
 function firmaGrupo(materiaId: string, g: Grupo): string {
   const franjas = g.sesiones.map((s) => `${s.dia}${s.inicio.toFixed(2)}-${s.fin.toFixed(2)}`).sort().join(',');
   return `${materiaId}~${g.actividad ?? ''}~${g.profesor ?? ''}~${franjas}`;
@@ -391,11 +395,13 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
 
   const opciones = elegirDiversas(unicos, cuantas);
 
-  const necesitoFueraOpcion1 = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id) === false) ?? [];
+  // las que no tenían ningún grupo válido ya tienen su aviso (candidatosDe): no se repite
+  const sinGrupos = new Set(ranuras.filter((r) => !r.candidatos.length).map((r) => r.materia.id));
+  const necesitoFueraOpcion1 = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id) === false && !sinGrupos.has(id)) ?? [];
   for (const id of necesitoFueraOpcion1) {
     avisos.push(`No fue posible incluir ${pensumPorId.get(id)?.nombre} sin romper tus reglas (cruces, horario o créditos).`);
   }
-  const gustariaFuera = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id)) ?? [];
+  const gustariaFuera = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id) && !sinGrupos.has(id)) ?? [];
   if (gustariaFuera.length) {
     const nombres = gustariaFuera.map((id) => pensumPorId.get(id)?.nombre ?? id);
     avisos.push(`La opción 1 no incluye ${listaNatural(nombres)} ("Me gustaría"): se cruza con otra materia, pasa tu máximo de créditos o solo cabía con un profesor que quieres evitar.`);
@@ -424,9 +430,9 @@ export function perfil(h: Horario): string {
 /**
  * Toma las mejores del ranking cuidando que se vean distintas:
  * primero exige perfil distinto y ≥2 materias diferentes; si no alcanza, relaja.
- * Antes busca entre las cercanas a la mejor (mismas materias y hasta 2
- * escalones en la prioridad principal), para que la diversidad no traiga de
- * vuelta horarios que incumplen lo que el estudiante puso primero.
+ * Antes busca entre las cercanas a la mejor (puntaje a menos de 3 escalones de
+ * la prioridad principal: mismos niveles de necesito, evitar y me gustaría),
+ * para que la diversidad no traiga horarios que incumplen lo que puso primero.
  */
 export function elegirDiversas(lista: Horario[], n: number): Horario[] {
   const reglas: ((e: Horario, h: Horario) => boolean)[] = [

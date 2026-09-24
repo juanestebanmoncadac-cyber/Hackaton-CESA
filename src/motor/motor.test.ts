@@ -3,6 +3,7 @@ import pensumJson from '../datos/pensum.json';
 import ofertaJson from '../datos/oferta.json';
 import type { EntradaMotor, Horario, Oferta, Pensum, Preferencias, SolicitudMateria } from '../types';
 import { costoHueco, generarHorarios, gruposSeCruzan, huecosDelDia } from './generarHorarios';
+import { explicar } from './explicar';
 import { aprobarConPrerrequisitos, desaprobarConDependientes, disponibles, hastaSemestre } from './pensum';
 
 const pensum = pensumJson as Pensum;
@@ -268,12 +269,31 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
     }
   });
 
-  it('respeta el rango de créditos elegido', () => {
-    for (const h of generarHorarios(entrada({}, { creditosMinimos: 15, ranking: ['terminarTemprano', 'profesores', 'huecos', 'noMadrugar', 'diasLibres'] })).opciones) {
-      expect(h.metricas.creditos).toBeGreaterThanOrEqual(15);
-    }
-    for (const h of generarHorarios(entrada({}, { limiteCreditos: 12 })).opciones) {
+  it('el máximo de créditos obliga: deja fuera "me gustaría" antes que "necesito" y nunca se pasa', () => {
+    // las "necesito" suman 11 créditos; con máximo 12 no cabe ninguna "me gustaría" de 2 créditos
+    const r = generarHorarios(entrada({}, { limiteCreditos: 12 }));
+    const necesito = SOLIC.filter((s) => s.prioridad === 'necesito').map((s) => s.materiaId);
+    for (const h of r.opciones) {
       expect(h.metricas.creditos).toBeLessThanOrEqual(12);
+      expect(h.materiasFuera.filter((id) => necesito.includes(id))).toEqual([]);
+      expect(h.materiasFuera.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('no repite avisos de la misma materia', () => {
+    const r = generarHorarios(entrada({}, { horaMinima: 10 }));
+    for (const m of pensum.materias.filter((x) => SOLIC.some((s) => s.materiaId === x.id))) {
+      expect(r.avisos.filter((a) => a.includes(m.nombre)).length).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it('"¿Por qué este?" no inventa razones', () => {
+    const pref: Preferencias = { ...PREF, ranking: ['noMadrugar', 'profesores', 'huecos', 'diasLibres', 'terminarTemprano'] };
+    for (const h of generarHorarios(entrada({}, { ranking: pref.ranking, limiteCreditos: 12 })).opciones) {
+      const texto = explicar(h, pref, pensum);
+      expect(texto).not.toContain('prioridad principal'); // la prioridad principal nunca saca materias
+      if ((h.metricas.entradaMasTemprana ?? 0) < 8) expect(texto).not.toContain('nunca entras antes');
+      expect(texto.length).toBeGreaterThan(0);
     }
   });
 

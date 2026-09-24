@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
-import type { Asignacion, Criterio, Horario } from '../types';
+import type { Asignacion, Horario } from '../types';
 import type { Estado } from '../estado/estado';
 import { IconoCandado } from '../componentes/Encabezado';
 import { listaNatural } from '../motor/explicar';
 import { nombreMateria } from '../componentes/formato';
 
-type Chip = 'huecos' | 'temprano' | 'dias' | 'profesor' | 'solo';
+// Los chips "Muchos huecos", "Entro muy temprano" y "Pocos días libres" se quitaron:
+// con el puntaje por niveles no cambiaban los horarios o cambiaban la prioridad
+// principal sin mostrarlo. Para eso, el estudiante reordena sus prioridades en el paso 3.
+type Chip = 'profesor' | 'solo';
 const CHIPS: [Chip, string][] = [
-  ['huecos', 'Muchos huecos'],
-  ['temprano', 'Entro muy temprano'],
-  ['dias', 'Pocos días libres'],
   ['profesor', 'Un profesor'],
   ['solo', 'Solo quiero ver otras'],
 ];
-const CRITERIO: Partial<Record<Chip, Criterio>> = { huecos: 'huecos', temprano: 'noMadrugar', dias: 'diasLibres' };
 
 interface Props {
   e: Estado;
@@ -24,8 +23,8 @@ interface Props {
 }
 
 /**
- * "Ver otras opciones": por defecto pasa a las siguientes del ranking con los
- * MISMOS pesos. Solo si el estudiante dice qué no le gustó, se ajustan.
+ * "Ver otras opciones": por defecto pasa a las siguientes del ranking con las
+ * MISMAS prioridades. Si el estudiante marca un profesor, se agrega como "evitar".
  */
 export function OtrasOpciones({ e, horario, fijados, cerrar, buscar }: Props) {
   const [chips, setChips] = useState<Set<Chip>>(new Set());
@@ -42,14 +41,9 @@ export function OtrasOpciones({ e, horario, fijados, cerrar, buscar }: Props) {
 
   const confirmar = () => {
     buscar((s) => {
-      const ajustes = { ...s.ajustes };
-      chips.forEach((c) => {
-        const k = CRITERIO[c];
-        if (k) ajustes[k] = (ajustes[k] ?? 1) * 1.8;
-      });
       const profesores = { ...s.profesores };
       if (chips.has('profesor')) evitar.forEach((p) => (profesores[p] = 'evitar'));
-      return { ...s, ajustes, profesores };
+      return { ...s, profesores };
     });
   };
 
@@ -58,7 +52,7 @@ export function OtrasOpciones({ e, horario, fijados, cerrar, buscar }: Props) {
       <div className="modal" role="dialog" aria-modal="true" aria-labelledby="t-otras" onClick={(ev) => ev.stopPropagation()}>
         <div>
           <h2 id="t-otras">¿Qué no te gustó?</h2>
-          <p>Opcional. Si no marcas nada, te mostramos las siguientes del ranking con tus mismas prioridades.</p>
+          <p>Opcional. Si no marcas nada, te mostramos las siguientes del ranking con tus mismas prioridades. Para cambiar lo que más te importa, vuelve a tus preferencias.</p>
         </div>
         <div className="chips">
           {CHIPS.map(([c, l]) => (
