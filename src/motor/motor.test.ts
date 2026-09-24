@@ -61,7 +61,7 @@ describe('datos', () => {
     }
   });
   it.skipIf(oferta.fuente !== 'simulada')('aplica la frecuencia semanal y los horarios fijos acordados', () => {
-    const tresEncuentros = new Set(['ma1', 'ma2', 'ep', 'ea', 'mf']);
+    const tresEncuentros = new Set(['ma1', 'ep', 'ea', 'mf']);
     for (const grupo of oferta.grupos.filter((g) => g.tipo === 'regular')) {
       const esperados = grupo.materiaId === 'v1' || grupo.materiaId === 'v2'
         ? 1 : tresEncuentros.has(grupo.materiaId) ? 3 : 2;
