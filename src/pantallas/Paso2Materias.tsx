@@ -70,7 +70,7 @@ export function Paso2Materias({ e, set, seguir, volver }: Props) {
     return (
       <div key={m.id} className={`card mcard ${st.sel ? '' : 'off'}`}>
         <div className="mcard-top">
-          <input type="checkbox" id={`chk-${m.id}`} checked={st.sel} onChange={() => upd(m.id, (x) => ({ ...x, sel: !x.sel }))} />
+          <input type="checkbox" id={`chk-${m.id}`} checked={st.sel} disabled={!grupos.length} onChange={() => upd(m.id, (x) => ({ ...x, sel: !x.sel }))} />
           <label htmlFor={`chk-${m.id}`}>{m.nombre}</label>
           <span className="crs">{m.creditos} cr</span>
         </div>
@@ -134,18 +134,20 @@ export function Paso2Materias({ e, set, seguir, volver }: Props) {
 
   const bloqueActividad = (m: Materia, tipo: 'BIENESTAR' | 'ELECTIVA_SH', texto: string) => {
     const st = mats[m.id];
+    const opciones = actividades(tipo);
     return (
       <div key={m.id} className="extra-main">
         <div className="row-check">
-          <input type="checkbox" id={`chk-${m.id}`} checked={st.sel} onChange={() => upd(m.id, (x) => ({ ...x, sel: !x.sel, prioridad: 'necesito' }))} />
+          <input type="checkbox" id={`chk-${m.id}`} checked={st.sel} disabled={!opciones.length} onChange={() => upd(m.id, (x) => ({ ...x, sel: !x.sel, prioridad: 'necesito' }))} />
           <label htmlFor={`chk-${m.id}`}>{m.nombre}</label>
           <span className="note">{m.creditos} cr · {texto}</span>
         </div>
+        {!opciones.length && <div className="note">Sin actividades abiertas en {OFERTA.periodo}.</div>}
         {st.sel && (
           <>
             <div className="note">Marca todas las que te sirvan. Usaremos la que mejor encaje en tu horario.</div>
             <div className="chips">
-              {actividades(tipo).map((a) => {
+              {opciones.map((a) => {
                 const on = st.actividades.includes(a);
                 return (
                   <button key={a} type="button" className={`chip ${on ? 'on' : ''}`} aria-pressed={on}
@@ -182,10 +184,11 @@ export function Paso2Materias({ e, set, seguir, volver }: Props) {
             )}
             <div className="extra-side">
               <div className="row-check">
-                <input type="checkbox" id="seleccion" checked={e.seleccion.pertenece}
+                <input type="checkbox" id="seleccion" checked={e.seleccion.pertenece} disabled={!selecciones.length}
                   onChange={() => set((s) => ({ ...s, seleccion: { pertenece: !s.seleccion.pertenece, nrc: s.seleccion.nrc ?? selecciones[0]?.nrc } }))} />
                 <label htmlFor="seleccion" style={{ fontSize: 14 }}>Pertenezco a una selección deportiva</label>
               </div>
+              {!selecciones.length && <div className="note">Sin selecciones deportivas abiertas en {OFERTA.periodo}.</div>}
               {!e.seleccion.pertenece ? (
                 <div className="note">Las selecciones no se asignan automáticamente. Solo aparecen si nos dices que eres parte de una.</div>
               ) : (

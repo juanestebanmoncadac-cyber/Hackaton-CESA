@@ -178,7 +178,11 @@ function candidatosDe(m: Materia, s: SolicitudMateria, entrada: EntradaMotor, av
 
   if (s.nrcFijado) {
     const fijo = base.find((g) => g.nrc === s.nrcFijado);
-    if (fijo) return [fijo]; // el candado manda aunque rompa una preferencia
+    if (fijo) {
+      if (fijo.sesiones.every((x) => x.inicio >= p.horaMinima && !p.diasBloqueados.includes(x.dia))) return [fijo];
+      avisos.push(`El grupo fijado de ${m.nombre} incumple tu hora mínima o un día bloqueado. Quita el candado o cambia esa restricción.`);
+      return [];
+    }
     avisos.push(`El grupo fijado de ${m.nombre} ya no está en la oferta; buscamos otros.`);
   }
   if ((m.tipo === 'bienestar' || m.tipo === 'electivaSH') && s.actividades?.length) {

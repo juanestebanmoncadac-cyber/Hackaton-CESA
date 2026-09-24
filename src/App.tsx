@@ -21,8 +21,8 @@ export default function App() {
   const [e, setE] = useState<Estado>(cargar);
   const set = useCallback((fn: (e: Estado) => Estado) => setE((s) => fn(s)), []);
 
-  useEffect(() => guardar(e), [e]);
-  useEffect(() => window.scrollTo({ top: 0, behavior: 'smooth' }), [e.paso]);
+  useEffect(() => { guardar(e); }, [e]);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [e.paso]);
 
   const irA = (paso: Estado['paso']) => set((s) => ({ ...s, paso }));
 

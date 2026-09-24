@@ -9,12 +9,12 @@ El estudiante marca las materias que ya aprobó, elige qué quiere inscribir y c
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 19 pruebas del motor y los datos
+npm test           # pruebas del motor y los datos
 npm run build      # carpeta dist/ (lo que publica Vercel)
 npm run build:demo # un solo archivo dist-demo/index.html para compartir
 ```
 
-`src/datos/pensum.json` y `src/datos/oferta.json` se generan solos la primera vez que corres `dev`, `build` o `test` (con `scripts/generar-datos.mjs`). Si el archivo ya existe no se toca, así que una oferta real nunca se sobrescribe. Para regenerar la simulada: `npm run datos`.
+`src/datos/pensum.json` y `src/datos/oferta.json` se generan automáticamente en `dev`, `build` y `test`. La oferta de prueba se construye desde `scripts/cesa-backtest.json`: 232 secciones regulares y 28 actividades de Bienestar con NRC, profesores, aulas y horarios **simulados**. Los nombres del pénsum y de las actividades de Bienestar se basan en fuentes CESA; esta oferta no corresponde a un periodo real de matrícula.
 
 ## Flujo (4 pasos)
 
@@ -45,7 +45,7 @@ npm run build:demo # un solo archivo dist-demo/index.html para compartir
 
 ## Datos reales (Oracle)
 
-La app nunca se conecta directo a Oracle. Cuando TI entregue la oferta real, basta con reemplazar `src/datos/oferta.json` por una exportación con el mismo formato (`Oferta` en `src/types.ts`). Rutas propuestas: A) exportación programada a JSON (recomendada para empezar), B) API REST con ORDS, C) servicio propio con `node-oracledb`.
+La app consume un único contrato `Oferta` definido en `src/types.ts`. Cuando TI entregue la oferta real, coloca su exportación con ese formato en `data/oferta-activa.json` y ejecuta `npm run build`. El generador usará ese archivo en lugar de la simulación; no se cambia el frontend ni el motor. Si se retira el archivo, vuelve la simulación. Los archivos de `src/datos/` son generados y no se editan. Al cambiar la oferta, las preferencias guardadas que apunten a NRC, actividades o profesores que ya no existen se limpian y los horarios anteriores se recalculan.
 
 ## Publicar en Vercel
 

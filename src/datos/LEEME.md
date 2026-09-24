@@ -1,7 +1,10 @@
 # Datos (dueña: Angie)
 
 - `pensum.json` — malla de Administración de Empresas (74 materias, prerrequisitos por validar con Registro Académico).
-- `oferta.json` — oferta de grupos 2027-1 **simulada**, con cruces a propósito, bienestar por actividad, electivas por tema y selecciones deportivas.
+- `oferta.json` — oferta de grupos 2027-1 **simulada** para probar el motor. Se genera desde `scripts/cesa-backtest.json`: 232 secciones regulares con profesores, aulas y horarios ficticios; 28 actividades de Bienestar documentadas por CESA con grupos y horarios ficticios; cuatro selecciones extracurriculares de prueba. Las 12 actividades extracurriculares adicionales quedan en el catálogo fuente y no se ofrecen como electivas de Bienestar.
 
-Los dos se generan con `npm run datos` (script `scripts/generar-datos.mjs`) y se crean solos si faltan.
-Cuando llegue la oferta real desde Oracle, se pone aquí como `oferta.json` con el mismo formato (`Oferta` en `src/types.ts`).
+Los dos se generan con `npm run datos` (script `scripts/generar-datos.mjs`) y se actualizan automáticamente al ejecutar `dev`, `build` o `test`. El archivo fuente distingue nombres documentados de NRC, cupos, profesores, aulas y franjas simulados. Las electivas profesionales y sociohumanísticas no reciben temas inventados: permanecen sin grupos hasta contar con una oferta verificable.
+
+En el escenario simulado, Matemáticas Aplicadas 1, Matemáticas Financieras, Estadística y Probabilidad, y Estadística Aplicada tienen tres encuentros semanales. Matemáticas Aplicadas 2 y las demás materias regulares tienen dos, excepto Visitas 1 (martes 8:00–12:10) y Visitas 2 (miércoles 8:00–13:40), que tienen un encuentro largo cada una. Todas las secciones de Proyecto Integrador Espíritu Emprendedor comparten martes y jueves 14:00–15:30. Las horas de regreso de Visitas no se agregan como un bloqueo adicional al generador.
+
+Cuando llegue la oferta real, guarda la exportación como `data/oferta-activa.json` en la raíz. Debe tener el formato `Oferta` de `src/types.ts`: `periodo`, `generadoEn`, `fuente`, y una lista `grupos` con NRC único, `materiaId`, `grupo`, `tipo`, `esSeleccion`, `cupos` y `sesiones` (`dia`, `inicio`, `fin`, `salon` opcional). Usa los ID de materia del pénsum; para actividades usa `BIENESTAR`, `ELECTIVA_SH` o `SELECCION`, con `actividad`. Las horas son números decimales (`8.5` = 8:30). Ejecuta `npm run datos` o `npm run build` para aplicar el cambio. Para volver al escenario de prueba, retira `data/oferta-activa.json` y vuelve a ejecutar el comando. No edites `src/datos/oferta.json`: es generado.
