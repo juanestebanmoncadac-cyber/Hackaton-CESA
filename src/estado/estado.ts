@@ -9,11 +9,19 @@ import { disponibles, hastaSemestre } from '../motor/pensum';
 
 export const PENSUM = pensumJson as Pensum;
 export const OFERTA = ofertaJson as Oferta;
+// Incluye horarios, profesores y cupos: un NRC puede conservarse aunque cambie su grupo.
 const DATOS_VERSION = (() => {
   let hash = 2166136261;
   for (const char of JSON.stringify(OFERTA)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
   return `${OFERTA.periodo}:${(hash >>> 0).toString(16)}`;
 })();
+
+function idEnOferta(id: string): string {
+  const tipo = PENSUM.materias.find((materia) => materia.id === id)?.tipo;
+  if (tipo === 'bienestar') return 'BIENESTAR';
+  if (tipo === 'electivaSH') return 'ELECTIVA_SH';
+  return id;
+}
 
 export interface EstadoMateria {
   sel: boolean;
@@ -55,8 +63,7 @@ function inicial(): Estado {
   for (const id of disp) {
     const [sel, prioridad] = defecto[id] ?? [false, 'gustaria'];
     const tipo = PENSUM.materias.find((m) => m.id === id)?.tipo;
-    const materiaOferta = tipo === 'bienestar' ? 'BIENESTAR' : tipo === 'electivaSH' ? 'ELECTIVA_SH' : id;
-    const disponible = tipo === 'sinHorario' || OFERTA.grupos.some((g) => g.materiaId === materiaOferta);
+    const disponible = tipo === 'sinHorario' || OFERTA.grupos.some((g) => g.materiaId === idEnOferta(id));
     materias[id] = {
       sel: sel && disponible,
       prioridad,
@@ -97,13 +104,12 @@ export function cargar(): Estado {
       const profesores = new Set(OFERTA.grupos.map((g) => g.profesor).filter(Boolean));
       const materias: Estado['materias'] = {};
       for (const [id, materia] of Object.entries(previo.materias ?? {})) {
-        if (!PENSUM.materias.some((m) => m.id === id)) continue;
+        const pensumMateria = PENSUM.materias.find((m) => m.id === id);
+        if (!pensumMateria) continue;
         materias[id] = {
           ...materia,
-          sel: materia.sel && (PENSUM.materias.find((m) => m.id === id)?.tipo === 'sinHorario' ||
-            OFERTA.grupos.some((g) => g.materiaId === id ||
-              (id.startsWith('b') && /^b\d$/.test(id) && g.materiaId === 'BIENESTAR') ||
-              (id.startsWith('es') && /^es\d$/.test(id) && g.materiaId === 'ELECTIVA_SH'))),
+          sel: materia.sel && (pensumMateria.tipo === 'sinHorario' ||
+            OFERTA.grupos.some((g) => g.materiaId === idEnOferta(id))),
           nrcFijado: nrcs.get(materia.nrcFijado ?? '')?.materiaId === id ? materia.nrcFijado : undefined,
           actividades: (materia.actividades ?? []).filter((a) => actividades.has(a)),
         };
