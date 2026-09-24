@@ -1,6 +1,6 @@
 import type { Dia, ToleranciaHuecos } from '../types';
 import { DIAS } from '../types';
-import type { Estado } from '../estado/estado';
+import { CREDITOS_TOPE, PENSUM, type Estado } from '../estado/estado';
 import { CORTO_DIA, ETIQUETA_CRITERIO, fmtHoraLarga } from '../motor/explicar';
 import { PESOS_POSICION } from '../motor/generarHorarios';
 import { Flecha } from '../componentes/Encabezado';
@@ -26,6 +26,14 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
     });
   const toggleDia = (d: Dia) =>
     set((s) => ({ ...s, diasBloqueados: s.diasBloqueados.includes(d) ? s.diasBloqueados.filter((x) => x !== d) : [...s.diasBloqueados, d] }));
+  // mover un extremo empuja al otro para que siempre min ≤ max
+  const cambiarCreditos = (extremo: 'min' | 'max', v: number) =>
+    set((s) => ({
+      ...s,
+      creditos: extremo === 'min' ? { min: v, max: Math.max(v, 1, s.creditos.max) } : { min: Math.min(v, s.creditos.min), max: v },
+    }));
+  const limite = PENSUM.limiteCreditosSemestre;
+  const sobrecupo = e.creditos.max > limite;
 
   return (
     <>
@@ -40,7 +48,7 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
         <section className="card">
           <div className="sec-head">
             <h2>Lo que prefiero</h2>
-            <span className="note">De más a menos importante</span>
+            <span className="note">La primera manda; las demás desempatan</span>
           </div>
           <ol className="rank">
             {e.ranking.map((c, i) => {
@@ -50,7 +58,7 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
                   <span className="pos">{i + 1}</span>
                   <div className="lbl">
                     {ETIQUETA_CRITERIO[c]}
-                    <div className="w"><div><div style={{ width: w }} /></div>peso {w}</div>
+                    <div className="w"><div><div style={{ width: i === 0 ? '100%' : w }} /></div>{i === 0 ? 'prioridad principal' : `desempate ${w}`}</div>
                   </div>
                   <button type="button" className="arrow" aria-label={`Subir ${ETIQUETA_CRITERIO[c]}`} disabled={i === 0} onClick={() => mover(i, -1)}><Flecha dir="up" /></button>
                   <button type="button" className="arrow" aria-label={`Bajar ${ETIQUETA_CRITERIO[c]}`} disabled={i === e.ranking.length - 1} onClick={() => mover(i, 1)}><Flecha dir="down" /></button>
@@ -90,6 +98,26 @@ export function Paso3Preferencias({ e, set, generar, volver }: Props) {
               })}
             </div>
             <span className="note">Úsalo para trabajo, prácticas u otros compromisos fijos.</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <span style={{ fontWeight: 700, fontSize: 14 }}>Créditos que quiero ver: de {e.creditos.min} a {e.creditos.max}</span>
+            <div className="rango">
+              <label htmlFor="cr-min">Mínimo</label>
+              <input id="cr-min" type="range" min={0} max={CREDITOS_TOPE} step={1} value={e.creditos.min}
+                aria-valuetext={`${e.creditos.min} créditos`} onChange={(ev) => cambiarCreditos('min', Number(ev.target.value))} />
+              <output htmlFor="cr-min">{e.creditos.min}</output>
+              <label htmlFor="cr-max">Máximo</label>
+              <input id="cr-max" type="range" min={1} max={CREDITOS_TOPE} step={1} value={e.creditos.max}
+                aria-valuetext={`${e.creditos.max} créditos`} onChange={(ev) => cambiarCreditos('max', Number(ev.target.value))} />
+              <output htmlFor="cr-max">{e.creditos.max}</output>
+            </div>
+            {sobrecupo ? (
+              <div className="aviso" role="alert">
+                Más de {limite} créditos es sobrecupo: en el CESA depende de tu promedio. Revisa tu promedio con Registro Académico antes de inscribirte.
+              </div>
+            ) : (
+              <span className="note">El límite normal es {limite} créditos. Pasarlo depende de tu promedio.</span>
+            )}
           </div>
           <div className="info">Si lo que prefieres no es posible con los grupos que hay, igual te mostramos las opciones más cercanas y te decimos por qué.</div>
         </section>

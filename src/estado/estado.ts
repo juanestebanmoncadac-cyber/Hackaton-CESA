@@ -9,11 +9,24 @@ import { disponibles, hastaSemestre } from '../motor/pensum';
 
 export const PENSUM = pensumJson as Pensum;
 export const OFERTA = ofertaJson as Oferta;
+/** tope del selector de créditos; por encima de limiteCreditosSemestre es sobrecupo */
+export const CREDITOS_TOPE = 30;
+const MOTOR_VERSION = 'm2';
+
+/** rango de créditos guardado: si viene dañado vuelve al valor por defecto */
+function creditosValidos(c: unknown, base: Estado['creditos']): Estado['creditos'] {
+  const r = c as Partial<Estado['creditos']> | null;
+  const ok = (x: unknown): x is number => typeof x === 'number' && Number.isFinite(x);
+  if (!r || !ok(r.min) || !ok(r.max)) return base;
+  const max = Math.min(CREDITOS_TOPE, Math.max(1, Math.round(r.max)));
+  return { min: Math.min(max, Math.max(0, Math.round(r.min))), max };
+}
 // Incluye horarios, profesores y cupos: un NRC puede conservarse aunque cambie su grupo.
 const DATOS_VERSION = (() => {
   let hash = 2166136261;
   for (const char of JSON.stringify(OFERTA)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
-  return `${OFERTA.periodo}:${(hash >>> 0).toString(16)}`;
+  // MOTOR_VERSION: súbela cuando cambie el formato de Horario.id, para descartar "vistos" viejos
+  return `${OFERTA.periodo}:${(hash >>> 0).toString(16)}:${MOTOR_VERSION}`;
 })();
 
 function idEnOferta(id: string): string {
@@ -41,6 +54,8 @@ export interface Estado {
   toleranciaHuecos: ToleranciaHuecos;
   horaMinima: number;
   diasBloqueados: Dia[];
+  /** rango de créditos que el estudiante acepta ver (más de 21 = sobrecupo, depende del promedio) */
+  creditos: { min: number; max: number };
   seleccion: { pertenece: boolean; nrc?: string };
   ajustes: Partial<Record<Criterio, number>>;
   /** resultado actual */
@@ -80,6 +95,7 @@ function inicial(): Estado {
     toleranciaHuecos: 'hasta2',
     horaMinima: 7,
     diasBloqueados: ['Sab'],
+    creditos: { min: 0, max: PENSUM.limiteCreditosSemestre },
     seleccion: { pertenece: false },
     ajustes: {},
     opciones: [],
@@ -98,7 +114,7 @@ export function cargar(): Estado {
     if (raw) {
       const previo = JSON.parse(raw) as Partial<Estado>;
       const base = inicial();
-      if (previo.datosVersion === DATOS_VERSION) return { ...base, ...previo };
+      if (previo.datosVersion === DATOS_VERSION) return { ...base, ...previo, creditos: creditosValidos(previo.creditos, base.creditos) };
       const nrcs = new Map(OFERTA.grupos.map((g) => [g.nrc, g]));
       const actividades = new Set(OFERTA.grupos.map((g) => g.actividad).filter(Boolean));
       const profesores = new Set(OFERTA.grupos.map((g) => g.profesor).filter(Boolean));
@@ -119,6 +135,7 @@ export function cargar(): Estado {
         ...previo,
         datosVersion: DATOS_VERSION,
         paso: previo.paso === 4 ? 2 : (previo.paso ?? 1),
+        creditos: creditosValidos(previo.creditos, base.creditos),
         materias,
         profesores: Object.fromEntries(Object.entries(previo.profesores ?? {}).filter(([p]) => profesores.has(p))),
         seleccion: {
@@ -183,6 +200,7 @@ export function preferenciasDe(e: Estado): Preferencias {
     diasBloqueados: e.diasBloqueados,
     seleccionNrc: e.seleccion.pertenece ? e.seleccion.nrc : undefined,
     ajustes: e.ajustes,
-    limiteCreditos: PENSUM.limiteCreditosSemestre,
+    limiteCreditos: e.creditos.max,
+    creditosMinimos: e.creditos.min,
   };
 }

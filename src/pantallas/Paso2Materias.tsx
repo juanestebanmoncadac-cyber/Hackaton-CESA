@@ -21,7 +21,7 @@ export function Paso2Materias({ e, set, seguir, volver }: Props) {
   const semAct = semestreActual(PENSUM, aprob);
   const disp = useMemo(() => disponibles(PENSUM, aprob), [aprob]);
   const mats = sincronizarMaterias(e);
-  const limite = PENSUM.limiteCreditosSemestre;
+  const limite = e.creditos.max; // lo elige el estudiante en Preferencias (por defecto el límite del pensum)
 
   const regulares = disp.filter((m) => m.tipo === 'regular');
   const bienestar = disp.find((m) => m.tipo === 'bienestar');
@@ -215,8 +215,11 @@ export function Paso2Materias({ e, set, seguir, volver }: Props) {
             <div className="big">{cr}<small> / {limite}</small></div>
             <div className="track"><div style={{ width: `${Math.min(100, (cr / limite) * 100)}%`, background: over ? 'var(--red)' : 'var(--blue)' }} /></div>
             <div className="note" style={{ color: over ? 'var(--red-ink)' : undefined }}>
-              {over ? 'Te pasaste del límite. Quita alguna materia o márcala como "Me gustaría".' : `Te quedan ${limite - cr} créditos disponibles.`}
+              {over ? 'Te pasaste de tu máximo. Quita alguna materia, márcala como "Me gustaría" o sube tu máximo de créditos en el siguiente paso.' : `Te quedan ${limite - cr} créditos disponibles.`}
             </div>
+            {cr > PENSUM.limiteCreditosSemestre && (
+              <div className="note" style={{ color: 'var(--amber-ink)' }}>Más de {PENSUM.limiteCreditosSemestre} créditos es sobrecupo: revisa tu promedio.</div>
+            )}
             <div className="note">{nSel} materias seleccionadas</div>
           </div>
           {choques.map((c) => (

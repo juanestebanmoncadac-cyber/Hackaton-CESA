@@ -4,11 +4,15 @@
  * generarHorarios(entrada) → { opciones, total, avisos }
  *
  * 1. Reglas duras (descartan): cruces, hora mínima, días bloqueados,
- *    grupos fijados (candado), límite de créditos, selección declarada.
- * 2. Búsqueda: backtracking sobre las materias pedidas; las "me gustaría"
- *    pueden quedar fuera, las "necesito" solo si no hay otra salida.
- * 3. Puntaje: preferencias suaves ponderadas por el ranking del estudiante.
- * 4. Diversidad: las 3 opciones se diferencian en al menos 2 materias.
+ *    grupos fijados (candado), máximo de créditos, selección declarada.
+ *    El mínimo de créditos descarta solo si alguna combinación lo alcanza.
+ * 2. Búsqueda: backtracking sobre las materias pedidas; cualquiera puede
+ *    quedar fuera, pero el puntaje castiga mucho dejar una "necesito".
+ * 3. Puntaje por niveles (un nivel alto siempre gana a los de abajo):
+ *    "necesito" incluidas > profesores "evitar" no usados > "me gustaría"
+ *    incluidas > prioridad principal > las demás prioridades (desempate).
+ * 4. Diversidad: las 3 opciones se diferencian en al menos 2 materias,
+ *    comparando lo que el estudiante ve (franjas y actividad), no el NRC.
  *
  * No usa red ni IA: es gratis, instantáneo y garantiza cero cruces.
  */
@@ -26,6 +30,7 @@ import type {
   Sesion,
   SolicitudMateria,
 } from '../types';
+import { listaNatural } from './explicar';
 
 export const PESOS_POSICION = [1, 0.75, 0.5, 0.3, 0.15];
 export const DIAS_HABILES: Dia[] = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie'];
@@ -33,9 +38,16 @@ const ALMUERZO: [number, number] = [12, 14];
 const MAX_NODOS = 400_000;
 const MAX_GUARDADOS = 3_000;
 
-const BONO_GUSTARIA = 0.8; // por cada "me gustaría" incluida
-const CASTIGO_NECESITO = 6; // por cada "necesito" que queda fuera
-const CASTIGO_EVITADO = 0.7; // por cada profesor "evitar" usado
+// Niveles del puntaje: un nivel alto siempre gana, sin importar los de abajo.
+// Cada nivel supera la suma máxima de los de abajo (≤ 9 materias por nivel,
+// ≤ 20 escalones × 1.000 en la prioridad principal, desempate < 1.000).
+const NIVEL_NECESITO = 10_000_000; // por cada "necesito" que queda fuera
+const NIVEL_EVITADO = 1_000_000; // por cada profesor "evitar" usado
+const NIVEL_GUSTARIA = 100_000; // por cada "me gustaría" incluida
+const NIVEL_PRINCIPAL = 1_000; // por cada escalón de la prioridad principal
+// La prioridad principal se compara en escalones de 0,05 (de 0 a 1): dentro
+// del mismo escalón, desempatan las demás prioridades.
+const ESCALON_PRINCIPAL = 0.05;
 
 // ───────────────────────── utilidades de tiempo ─────────────────────────
 
@@ -139,9 +151,11 @@ export function satisfaccion(asig: Asignacion[], m: Metricas, pref: Preferencias
   const madrugon = (h: number) => (h < 8 ? 1 : h < 9 ? 0.55 : h < 10 ? 0.2 : 0);
   const noMadrugar = dias.length ? 1 - dias.reduce((acc, ss) => acc + madrugon(Math.min(...ss.map((s) => s.inicio))), 0) / dias.length : 1;
 
-  // terminar temprano
-  const finProm = dias.length ? dias.reduce((acc, ss) => acc + Math.max(...ss.map((s) => s.fin)), 0) / dias.length : 12;
-  const terminarTemprano = clamp((18 - finProm) / 6);
+  // terminar temprano: cuenta la salida promedio y también el día que sale más tarde
+  const fines = dias.map((ss) => Math.max(...ss.map((s) => s.fin)));
+  const finProm = fines.length ? fines.reduce((acc, f) => acc + f, 0) / fines.length : 12;
+  const finMax = fines.length ? Math.max(...fines) : 12;
+  const terminarTemprano = 0.6 * clamp((18 - finProm) / 6) + 0.4 * clamp((18 - finMax) / 6);
 
   // días libres (de lunes a viernes, sin contar los bloqueados por el estudiante)
   const libres = m.diasLibres.filter((d) => !pref.diasBloqueados.includes(d)).length;
@@ -158,6 +172,39 @@ export function pesos(pref: Preferencias): Record<Criterio, number> {
     w[c] = (PESOS_POSICION[i] ?? 0.1) * (pref.ajustes?.[c] ?? 1);
   });
   return w;
+}
+
+/**
+ * La prioridad que manda: la primera del ranking, salvo que "¿Qué no te gustó?"
+ * haya subido tanto otra que ahora pese más.
+ */
+export function criterioPrincipal(pref: Preferencias): Criterio {
+  const w = pesos(pref);
+  return pref.ranking.reduce((mejor, c) => (w[c] > w[mejor] ? c : mejor), pref.ranking[0]);
+}
+
+/** lo que el estudiante ve de un grupo, sin el NRC: materia, actividad, profesor y franjas */
+function firmaGrupo(materiaId: string, g: Grupo): string {
+  const franjas = g.sesiones.map((s) => `${s.dia}${s.inicio.toFixed(2)}-${s.fin.toFixed(2)}`).sort().join(',');
+  return `${materiaId}~${g.actividad ?? ''}~${g.profesor ?? ''}~${franjas}`;
+}
+
+/** firma estable del horario (Horario.id): grupos clonados con otro NRC dan la misma */
+export function firmaHorario(asig: Asignacion[]): string {
+  return asig.map((a) => firmaGrupo(a.materiaId, a.grupo)).sort().join('|') || 'vacio';
+}
+
+/**
+ * Cómo se compara un horario con los ya vistos: un profesor sobre el que el
+ * estudiante no opinó no lo hace "nuevo" (misma franja con otro profesor = lo
+ * mismo para él). Se calcula desde la firma estable, así que si el estudiante
+ * opina después (p. ej. "evitar"), los horarios vistos se siguen reconociendo.
+ */
+export function firmaParaComparar(id: string, conOpinion: Set<string>): string {
+  return id.split('|').map((parte) => {
+    const [materia, actividad, profe, franjas] = parte.split('~');
+    return `${materia}~${actividad}~${profe && conOpinion.has(profe) ? profe : ''}~${franjas}`;
+  }).sort().join('|');
 }
 
 // ───────────────────────── candidatos por materia ─────────────────────────
@@ -208,6 +255,10 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
   const avisos: string[] = [];
   const pensumPorId = new Map(pensum.materias.map((m) => [m.id, m]));
   const w = pesos(pref);
+  const principal = criterioPrincipal(pref);
+  // rango de créditos (valores inválidos caen al límite del pensum, nunca a "sin límite")
+  const maxCreditos = Number.isFinite(pref.limiteCreditos) ? pref.limiteCreditos : pensum.limiteCreditosSemestre;
+  const minCreditos = Math.min(Number.isFinite(pref.creditosMinimos) ? pref.creditosMinimos! : 0, maxCreditos);
 
   // Selección deportiva: bloque fijo, solo si el estudiante la declaró
   const fijosBase: Asignacion[] = [];
@@ -247,26 +298,38 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
   const actual: Asignacion[] = [...fijosBase];
   const fuera: string[] = [];
   let creditos = 0;
+  let necesitoFuera = 0; // "necesito" dejadas fuera en la rama actual
+  let mejorNecesitoFuera = Infinity; // lo mínimo logrado en una combinación completa
+  let conMinimo = 0; // combinaciones que alcanzan el mínimo de créditos
 
+  const opcionalPorId = new Map(ranuras.map((r) => [r.materia.id, r.opcional]));
+
+  // Puntaje por niveles (ver NIVEL_*): necesito > evitar > me gustaría > prioridad principal > desempate.
   const puntuar = (): number => {
     const m = calcularMetricas(actual, solicitudes, pensumPorId);
     const sat = satisfaccion(actual, m, pref);
-    let p = 0;
-    (Object.keys(w) as Criterio[]).forEach((c) => (p += w[c] * sat[c]));
-    for (const a of actual) {
-      const r = ranuras.find((x) => x.materia.id === a.materiaId);
-      if (r?.opcional) p += BONO_GUSTARIA;
-    }
-    for (const id of fuera) {
-      const r = ranuras.find((x) => x.materia.id === id);
-      if (r && !r.opcional) p -= CASTIGO_NECESITO;
-    }
-    p -= CASTIGO_EVITADO * m.profesEvitadosUsados;
-    return p;
+    const gustariaIncluidas = actual.filter((a) => opcionalPorId.get(a.materiaId)).length;
+    const escalon = Math.round(sat[principal] / ESCALON_PRINCIPAL);
+    let desempate = sat[principal]; // dentro del mismo escalón, más cerca de lo ideal es mejor
+    (Object.keys(w) as Criterio[]).forEach((c) => { if (c !== principal) desempate += w[c] * sat[c]; });
+    return -NIVEL_NECESITO * necesitoFuera - NIVEL_EVITADO * m.profesEvitadosUsados
+      + NIVEL_GUSTARIA * gustariaIncluidas + NIVEL_PRINCIPAL * escalon + desempate;
   };
 
   const guardar = () => {
     total++;
+    mejorNecesitoFuera = Math.min(mejorNecesitoFuera, necesitoFuera);
+    // Bajo el mínimo de créditos: solo sirve de respaldo mientras nada lo cumpla.
+    // La primera combinación que lo cumple descarta los respaldos guardados.
+    const cumpleMinimo = creditos >= minCreditos;
+    if (!cumpleMinimo && conMinimo > 0) return;
+    if (cumpleMinimo) {
+      if (conMinimo === 0 && minCreditos > 0) {
+        guardados.length = 0;
+        peorGuardado = -Infinity;
+      }
+      conMinimo++;
+    }
     const puntaje = puntuar();
     if (guardados.length >= MAX_GUARDADOS && puntaje <= peorGuardado) return;
     guardados.push({ asig: [...actual], fuera: [...fuera], puntaje });
@@ -279,11 +342,13 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
 
   const bt = (i: number) => {
     if (++nodos > MAX_NODOS) return;
+    // poda: esta rama ya deja fuera más "necesito" que la mejor combinación encontrada
+    if (necesitoFuera > mejorNecesitoFuera) return;
     if (i === ranuras.length) return guardar();
     const r = ranuras[i];
     const cr = r.materia.creditos;
     for (const g of r.candidatos) {
-      if (creditos + cr > pref.limiteCreditos) break;
+      if (creditos + cr > maxCreditos) break;
       if (actual.some((a) => gruposSeCruzan(a.grupo, g))) continue;
       actual.push({ materiaId: r.materia.id, grupo: g });
       creditos += cr;
@@ -291,46 +356,59 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
       creditos -= cr;
       actual.pop();
     }
-    // dejar la materia fuera: siempre posible para "me gustaría"; para "necesito" es el último recurso
+    // dejar la materia fuera (a veces sacar una "necesito" deja entrar a otras dos)
     fuera.push(r.materia.id);
+    if (!r.opcional) necesitoFuera++;
     bt(i + 1);
+    if (!r.opcional) necesitoFuera--;
     fuera.pop();
   };
   bt(0);
 
   if (nodos > MAX_NODOS) avisos.push('Hay demasiadas combinaciones; mostramos las mejores que encontramos.');
+  if (minCreditos > 0 && conMinimo === 0 && guardados.length) {
+    avisos.push(`Ninguna combinación llega a ${minCreditos} créditos con tus materias y reglas. Te mostramos las más cercanas.`);
+  }
 
   guardados.sort((a, b) => b.puntaje - a.puntaje);
 
   const construir = (g: (typeof guardados)[number]): Horario => {
-    const id = g.asig.map((a) => a.grupo.nrc).sort().join('-') || 'vacio';
+    const id = firmaHorario(g.asig);
     return { id, asignaciones: g.asig, puntaje: Math.round(g.puntaje * 1000) / 1000, metricas: calcularMetricas(g.asig, solicitudes, pensumPorId), materiasFuera: g.fuera };
   };
 
-  // quitar duplicados y los ya mostrados
-  const vistos = new Set<string>();
+  // quitar duplicados y los ya mostrados, comparando como los ve el estudiante hoy
+  const conOpinion = new Set(solicitudes.flatMap((s) => Object.keys(s.profesores)));
+  const vistos = new Set([...excluir].map((id) => firmaParaComparar(id, conOpinion)));
   const unicos: Horario[] = [];
   for (const g of guardados) {
     const h = construir(g);
-    if (vistos.has(h.id) || excluir.has(h.id)) continue;
-    vistos.add(h.id);
+    const f = firmaParaComparar(h.id, conOpinion);
+    if (vistos.has(f)) continue;
+    vistos.add(f);
     unicos.push(h);
   }
 
   const opciones = elegirDiversas(unicos, cuantas);
 
-  const necesitoFuera = opciones[0]?.materiasFuera.filter((id) => !ranuras.find((r) => r.materia.id === id)?.opcional) ?? [];
-  for (const id of necesitoFuera) {
+  const necesitoFueraOpcion1 = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id) === false) ?? [];
+  for (const id of necesitoFueraOpcion1) {
     avisos.push(`No fue posible incluir ${pensumPorId.get(id)?.nombre} sin romper tus reglas (cruces, horario o créditos).`);
+  }
+  const gustariaFuera = opciones[0]?.materiasFuera.filter((id) => opcionalPorId.get(id)) ?? [];
+  if (gustariaFuera.length) {
+    const nombres = gustariaFuera.map((id) => pensumPorId.get(id)?.nombre ?? id);
+    avisos.push(`La opción 1 no incluye ${listaNatural(nombres)} ("Me gustaría"): se cruza con otra materia, pasa tu máximo de créditos o solo cabía con un profesor que quieres evitar.`);
   }
 
   return { opciones, total, avisos: [...new Set(avisos)] };
 }
 
-/** diferencia = número de materias con grupo distinto (o presencia distinta) */
+/** diferencia = número de materias en otra franja o actividad (o presencia distinta) */
 export function diferencia(a: Horario, b: Horario): number {
-  const ma = new Map(a.asignaciones.map((x) => [x.materiaId, x.grupo.nrc]));
-  const mb = new Map(b.asignaciones.map((x) => [x.materiaId, x.grupo.nrc]));
+  const vista = (g: Grupo) => `${g.actividad ?? ''}@${g.sesiones.map((s) => `${s.dia}${s.inicio}`).sort().join(',')}`;
+  const ma = new Map(a.asignaciones.map((x) => [x.materiaId, vista(x.grupo)]));
+  const mb = new Map(b.asignaciones.map((x) => [x.materiaId, vista(x.grupo)]));
   const ids = new Set([...ma.keys(), ...mb.keys()]);
   let d = 0;
   ids.forEach((id) => { if (ma.get(id) !== mb.get(id)) d++; });
@@ -346,6 +424,9 @@ export function perfil(h: Horario): string {
 /**
  * Toma las mejores del ranking cuidando que se vean distintas:
  * primero exige perfil distinto y ≥2 materias diferentes; si no alcanza, relaja.
+ * Antes busca entre las cercanas a la mejor (mismas materias y hasta 2
+ * escalones en la prioridad principal), para que la diversidad no traiga de
+ * vuelta horarios que incumplen lo que el estudiante puso primero.
  */
 export function elegirDiversas(lista: Horario[], n: number): Horario[] {
   const reglas: ((e: Horario, h: Horario) => boolean)[] = [
@@ -353,11 +434,13 @@ export function elegirDiversas(lista: Horario[], n: number): Horario[] {
     (e, h) => diferencia(e, h) >= 2,
     (e, h) => diferencia(e, h) >= 1,
   ];
+  const mejor = lista[0]?.puntaje ?? 0;
+  const zonas: ((h: Horario) => boolean)[] = [(h) => mejor - h.puntaje < 3 * NIVEL_PRINCIPAL, () => true];
   const elegidas: Horario[] = [];
-  for (const regla of reglas) {
+  for (const zona of zonas) for (const regla of reglas) {
     for (const h of lista) {
       if (elegidas.length === n) break;
-      if (elegidas.includes(h)) continue;
+      if (elegidas.includes(h) || !zona(h)) continue;
       if (elegidas.every((e) => regla(e, h))) elegidas.push(h);
     }
   }

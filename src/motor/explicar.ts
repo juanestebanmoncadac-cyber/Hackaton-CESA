@@ -75,7 +75,7 @@ export function explicar(h: Horario, pref: Preferencias, pensum: Pensum, mejor?:
 
   if (h.materiasFuera.length) {
     const nombres = h.materiasFuera.map((id) => pensum.materias.find((x) => x.id === id)?.nombre ?? id);
-    texto += ` Deja fuera ${listaNatural(nombres)} para que todo encaje.`;
+    texto += ` Deja fuera ${listaNatural(nombres)} para respetar tus reglas y tu prioridad principal.`;
   }
 
   if (mejor && mejor.id !== h.id) {

@@ -89,7 +89,7 @@ export type Criterio = 'profesores' | 'huecos' | 'noMadrugar' | 'diasLibres' | '
 export type ToleranciaHuecos = 'max1' | 'hasta2' | 'igual';
 
 export interface Preferencias {
-  /** de más a menos importante; el peso sale de la posición */
+  /** de más a menos importante: la primera manda y las demás desempatan */
   ranking: Criterio[];
   toleranciaHuecos: ToleranciaHuecos;
   /** regla dura: no hay clases antes de esta hora */
@@ -100,7 +100,10 @@ export interface Preferencias {
   seleccionNrc?: string;
   /** ajustes de pesos que vienen de "¿Qué no te gustó?" (multiplicadores) */
   ajustes?: Partial<Record<Criterio, number>>;
+  /** regla dura: máximo de créditos que el estudiante acepta ver */
   limiteCreditos: number;
+  /** mínimo de créditos deseado (0 si no se indica); si ninguna combinación lo alcanza, se muestran las más cercanas */
+  creditosMinimos?: number;
 }
 
 // ───────────────────────── Resultado ─────────────────────────
@@ -121,9 +124,9 @@ export interface Asignacion {
 }
 
 export interface Horario {
-  id: string; // firma estable: NRCs ordenados
+  id: string; // firma estable: materia, actividad, profesor y franjas de cada grupo (sin NRC: los grupos clonados dan la misma)
   asignaciones: Asignacion[];
-  puntaje: number;
+  puntaje: number; // solo sirve para ordenar: es por niveles (ver generarHorarios.ts), no un porcentaje
   metricas: Metricas;
   materiasFuera: string[]; // ids que no se pudieron incluir
 }

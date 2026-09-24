@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import pensumJson from '../datos/pensum.json';
 import ofertaJson from '../datos/oferta.json';
-import type { EntradaMotor, Oferta, Pensum, Preferencias, SolicitudMateria } from '../types';
+import type { EntradaMotor, Horario, Oferta, Pensum, Preferencias, SolicitudMateria } from '../types';
 import { costoHueco, generarHorarios, gruposSeCruzan, huecosDelDia } from './generarHorarios';
 import { aprobarConPrerrequisitos, desaprobarConDependientes, disponibles, hastaSemestre } from './pensum';
 
@@ -62,9 +62,9 @@ describe('datos', () => {
   });
   it.skipIf(oferta.fuente !== 'simulada')('aplica la frecuencia semanal y los horarios fijos acordados', () => {
     const tresEncuentros = new Set(['ma1', 'ep', 'ea', 'mf']);
+    const unEncuentro = new Set(['v1', 'v2', 'i1', 'i2', 'i3', 'i4']); // Idiomas se ve una vez por semana
     for (const grupo of oferta.grupos.filter((g) => g.tipo === 'regular')) {
-      const esperados = grupo.materiaId === 'v1' || grupo.materiaId === 'v2'
-        ? 1 : tresEncuentros.has(grupo.materiaId) ? 3 : 2;
+      const esperados = unEncuentro.has(grupo.materiaId) ? 1 : tresEncuentros.has(grupo.materiaId) ? 3 : 2;
       expect(grupo.sesiones).toHaveLength(esperados);
       if (grupo.materiaId === 'v1') {
         expect(grupo.sesiones[0]).toMatchObject({ dia: 'Mar', inicio: 8, fin: 12 + 10 / 60 });
@@ -114,6 +114,20 @@ describe('huecos', () => {
   });
 });
 
+describe('motor con oferta mínima', () => {
+  it('deja fuera la "necesito" que bloquea a otras dos, no a las dos', () => {
+    // A (lun y mar 8:00) choca con B (lun 8:00) y con C (mar 8:00); lo mejor es sacar solo A
+    const grupo = (nrc: string, materiaId: string, dias: ('Lun' | 'Mar')[]) => ({
+      nrc, materiaId, grupo: 'Grupo 1', profesor: nrc, tipo: 'regular' as const, esSeleccion: false, cupos: 30,
+      sesiones: dias.map((dia) => ({ dia, inicio: 8, fin: 9.5 })),
+    });
+    const mini: Oferta = { periodo: 'prueba', generadoEn: '', fuente: 'simulada', grupos: [grupo('A1', 'mtd', ['Lun', 'Mar']), grupo('B1', 'mc', ['Lun']), grupo('C1', 'io', ['Mar'])] };
+    const sol: SolicitudMateria[] = ['mtd', 'mc', 'io'].map((materiaId) => ({ materiaId, prioridad: 'necesito', profesores: {} }));
+    const [h] = generarHorarios({ solicitudes: sol, oferta: mini, pensum, preferencias: PREF }).opciones;
+    expect(h.materiasFuera).toEqual(['mtd']);
+  });
+});
+
 describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', () => {
   it('da 3 opciones sin cruces y dentro del límite de créditos', () => {
     const r = generarHorarios(entrada());
@@ -126,7 +140,9 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
 
   it('las 3 opciones son distintas en al menos 2 materias', () => {
     const [a, b, c] = generarHorarios(entrada()).opciones;
-    const dif = (x: typeof a, y: typeof a) => x.asignaciones.filter((p) => !y.asignaciones.some((q) => q.grupo.nrc === p.grupo.nrc)).length;
+    // se compara lo que el estudiante ve (materia y franjas), no el NRC
+    const ve = (p: (typeof a)['asignaciones'][number]) => `${p.materiaId}:${p.grupo.sesiones.map((s) => `${s.dia}${s.inicio}`).join()}`;
+    const dif = (x: typeof a, y: typeof a) => x.asignaciones.filter((p) => !y.asignaciones.some((q) => ve(q) === ve(p))).length;
     expect(dif(a, b)).toBeGreaterThanOrEqual(2);
     expect(dif(a, c)).toBeGreaterThanOrEqual(2);
     expect(dif(b, c)).toBeGreaterThanOrEqual(2);
@@ -199,6 +215,72 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
     const r2 = generarHorarios(entrada({ excluir: r1.opciones.map((h) => h.id) }));
     expect(r2.opciones.length).toBeGreaterThan(0);
     for (const h of r2.opciones) expect(r1.opciones.map((x) => x.id)).not.toContain(h.id);
+  });
+
+  it('"Ver otras opciones" no muestra grupos clonados como opciones nuevas', () => {
+    // v1 tiene varios grupos a la misma hora; cambiar solo el NRC no cuenta como horario nuevo
+    const franjas = (h: Horario) => h.asignaciones.map((a) => `${a.materiaId}:${a.grupo.sesiones.map((s) => `${s.dia}${s.inicio}`).join()}`).sort().join('|');
+    let vistos: string[] = [];
+    const mostradas: string[] = [];
+    for (let ronda = 0; ronda < 4; ronda++) {
+      const r = generarHorarios(entrada({ excluir: vistos }));
+      vistos = [...vistos, ...r.opciones.map((h) => h.id)];
+      mostradas.push(...r.opciones.map(franjas));
+    }
+    expect(new Set(mostradas).size).toBe(mostradas.length);
+  });
+
+  it('la prioridad principal manda: con "terminar temprano" primero se sale antes, sin perder materias', () => {
+    const fines = (h: Horario) => {
+      const fin = new Map<string, number>();
+      for (const a of h.asignaciones) for (const s of a.grupo.sesiones) fin.set(s.dia, Math.max(fin.get(s.dia) ?? 0, s.fin));
+      return [...fin.values()];
+    };
+    const promedio = (h: Horario) => fines(h).reduce((x, y) => x + y, 0) / fines(h).length;
+    const [porDefecto] = generarHorarios(entrada()).opciones;
+    const temprano = generarHorarios(entrada({}, { ranking: ['terminarTemprano', 'profesores', 'huecos', 'noMadrugar', 'diasLibres'] })).opciones;
+    expect(temprano).toHaveLength(3);
+    expect(promedio(temprano[0])).toBeLessThan(promedio(porDefecto));
+    for (const h of temprano) {
+      expect(Math.max(...fines(h))).toBeLessThanOrEqual(Math.max(...fines(porDefecto)));
+      expect(h.materiasFuera).toEqual([]); // las "me gustaría" que caben no se sacrifican
+    }
+  });
+
+  it('marcar un profesor para "evitar" entre rondas no repite horarios ni lo deja', () => {
+    const r1 = generarHorarios(entrada());
+    const profe = r1.opciones[0].asignaciones.find((a) => a.materiaId === 'io')!.grupo.profesor!;
+    const sol = SOLIC.map((s) => (s.materiaId === 'io' ? { ...s, profesores: { ...s.profesores, [profe]: 'evitar' as const } } : s));
+    const r2 = generarHorarios(entrada({ solicitudes: sol, excluir: r1.opciones.map((h) => h.id) }));
+    expect(r2.opciones.length).toBeGreaterThan(0);
+    for (const h of r2.opciones) {
+      expect(r1.opciones.map((x) => x.id)).not.toContain(h.id);
+      expect(h.asignaciones.some((a) => a.grupo.profesor === profe)).toBe(false);
+    }
+  });
+
+  it('una "necesito" no queda fuera si le cabe algún grupo', () => {
+    for (const ranking of [PREF.ranking, ['terminarTemprano', 'diasLibres', 'huecos', 'noMadrugar', 'profesores'] as Preferencias['ranking']]) {
+      for (const h of generarHorarios(entrada({}, { ranking })).opciones) {
+        const necesito = SOLIC.filter((s) => s.prioridad === 'necesito').map((s) => s.materiaId);
+        expect(h.materiasFuera.filter((id) => necesito.includes(id))).toEqual([]);
+      }
+    }
+  });
+
+  it('respeta el rango de créditos elegido', () => {
+    for (const h of generarHorarios(entrada({}, { creditosMinimos: 15, ranking: ['terminarTemprano', 'profesores', 'huecos', 'noMadrugar', 'diasLibres'] })).opciones) {
+      expect(h.metricas.creditos).toBeGreaterThanOrEqual(15);
+    }
+    for (const h of generarHorarios(entrada({}, { limiteCreditos: 12 })).opciones) {
+      expect(h.metricas.creditos).toBeLessThanOrEqual(12);
+    }
+  });
+
+  it('si ninguna combinación llega al mínimo de créditos, avisa y muestra las más cercanas', () => {
+    const r = generarHorarios(entrada({}, { creditosMinimos: 30, limiteCreditos: 30 }));
+    expect(r.opciones.length).toBeGreaterThan(0);
+    expect(r.avisos.some((a) => a.includes('Ninguna combinación llega a 30 créditos'))).toBe(true);
   });
 
   it('reglas imposibles no dejan al estudiante sin resultados', () => {

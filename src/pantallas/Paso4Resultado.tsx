@@ -85,7 +85,7 @@ export function Paso4Resultado({ e, set, otras, volver }: Props) {
         <div>
           <h1>Tus {e.opciones.length === 1 ? 'opción' : `${e.opciones.length} opciones`} de horario</h1>
           <p>
-            Todas sin cruces{credTot ? ` y con ${credTot} créditos` : ''}. Compara y quédate con la que más te sirva.
+            Todas sin cruces.{credTot ? ` Esta opción tiene ${credTot} créditos.` : ''} Compara y quédate con la que más te sirva.
             {e.ronda > 1 && ` (Ronda ${e.ronda}: opciones nuevas.)`}
           </p>
         </div>
@@ -99,6 +99,11 @@ export function Paso4Resultado({ e, set, otras, volver }: Props) {
       </div>
 
       {e.avisos.map((a) => <div key={a} className="aviso">{a}</div>)}
+      {credTot > PENSUM.limiteCreditosSemestre && (
+        <div className="aviso" role="alert">
+          Esta opción tiene {credTot} créditos: más de {PENSUM.limiteCreditosSemestre} es sobrecupo y en el CESA depende de tu promedio. Revisa tu promedio con Registro Académico antes de inscribirte.
+        </div>
+      )}
 
       <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
         <div className="r-row top-row">

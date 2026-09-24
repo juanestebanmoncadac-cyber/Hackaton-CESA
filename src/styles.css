@@ -162,6 +162,9 @@ select.sel { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--li
 .dias { display: flex; gap: 8px; flex-wrap: wrap; }
 .dia { width: 52px; height: 48px; border-radius: 10px; border: 1px solid var(--line); background: #fff; font-weight: 700; font-size: 14px; }
 .dia.bloq { border-color: var(--red); background: var(--red-bg); color: var(--red-ink); text-decoration: line-through; }
+.rango { display: grid; grid-template-columns: auto minmax(0, 1fr) 28px; align-items: center; gap: 8px 12px; font-size: 14px; }
+.rango input[type=range] { width: 100%; accent-color: var(--navy); }
+.rango output { font-weight: 700; text-align: right; }
 .info { padding: 14px 16px; border-radius: 12px; background: var(--tint2); font-size: 13.5px; line-height: 1.45; color: #1D3B6E; }
 .foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 

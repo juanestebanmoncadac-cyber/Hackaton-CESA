@@ -4515,12 +4515,6 @@
           "inicio": 8.666666666666666,
           "fin": 10.166666666666666,
           "salon": "Casa Fundadores — aula simulada 301"
-        },
-        {
-          "dia": "Jue",
-          "inicio": 8.666666666666666,
-          "fin": 10.166666666666666,
-          "salon": "Casa Fundadores — aula simulada 301"
         }
       ]
     },
@@ -4533,12 +4527,6 @@
       "sesiones": [
         {
           "dia": "Jue",
-          "inicio": 12.166666666666666,
-          "fin": 13.666666666666666,
-          "salon": "Casa Echavarría — aula simulada 501"
-        },
-        {
-          "dia": "Lun",
           "inicio": 12.166666666666666,
           "fin": 13.666666666666666,
           "salon": "Casa Echavarría — aula simulada 501"
@@ -4557,12 +4545,6 @@
           "inicio": 12.166666666666666,
           "fin": 13.666666666666666,
           "salon": "Casa Vargas — aula simulada 401"
-        },
-        {
-          "dia": "Mar",
-          "inicio": 12.166666666666666,
-          "fin": 13.666666666666666,
-          "salon": "Casa Vargas — aula simulada 401"
         }
       ]
     },
@@ -4575,12 +4557,6 @@
       "sesiones": [
         {
           "dia": "Vie",
-          "inicio": 8.666666666666666,
-          "fin": 10.166666666666666,
-          "salon": "Casa Incolda — aula simulada 501"
-        },
-        {
-          "dia": "Mar",
           "inicio": 8.666666666666666,
           "fin": 10.166666666666666,
           "salon": "Casa Incolda — aula simulada 501"
@@ -4599,12 +4575,6 @@
           "inicio": 8.666666666666666,
           "fin": 10.166666666666666,
           "salon": "Casa Fundadores — aula simulada 601"
-        },
-        {
-          "dia": "Lun",
-          "inicio": 8.666666666666666,
-          "fin": 10.166666666666666,
-          "salon": "Casa Fundadores — aula simulada 601"
         }
       ]
     },
@@ -4617,12 +4587,6 @@
       "sesiones": [
         {
           "dia": "Lun",
-          "inicio": 14,
-          "fin": 15.5,
-          "salon": "Casa Fundadores — aula simulada 301"
-        },
-        {
-          "dia": "Mie",
           "inicio": 14,
           "fin": 15.5,
           "salon": "Casa Fundadores — aula simulada 301"
@@ -4641,12 +4605,6 @@
           "inicio": 7,
           "fin": 8.5,
           "salon": "Casa Incolda — aula simulada 501"
-        },
-        {
-          "dia": "Vie",
-          "inicio": 7,
-          "fin": 8.5,
-          "salon": "Casa Incolda — aula simulada 501"
         }
       ]
     },
@@ -4659,12 +4617,6 @@
       "sesiones": [
         {
           "dia": "Mar",
-          "inicio": 7,
-          "fin": 8.5,
-          "salon": "Casa Diag 34 II — aula simulada 201"
-        },
-        {
-          "dia": "Jue",
           "inicio": 7,
           "fin": 8.5,
           "salon": "Casa Diag 34 II — aula simulada 201"
@@ -4683,12 +4635,6 @@
           "inicio": 15.666666666666666,
           "fin": 17.166666666666668,
           "salon": "Casa Echavarría — aula simulada 601"
-        },
-        {
-          "dia": "Mie",
-          "inicio": 15.666666666666666,
-          "fin": 17.166666666666668,
-          "salon": "Casa Echavarría — aula simulada 601"
         }
       ]
     },
@@ -4701,12 +4647,6 @@
       "sesiones": [
         {
           "dia": "Jue",
-          "inicio": 12.166666666666666,
-          "fin": 13.666666666666666,
-          "salon": "Casa Diag 34 I — aula simulada 201"
-        },
-        {
-          "dia": "Lun",
           "inicio": 12.166666666666666,
           "fin": 13.666666666666666,
           "salon": "Casa Diag 34 I — aula simulada 201"
@@ -4725,12 +4665,6 @@
           "inicio": 10.5,
           "fin": 12,
           "salon": "Casa Vargas — aula simulada 101"
-        },
-        {
-          "dia": "Mar",
-          "inicio": 10.5,
-          "fin": 12,
-          "salon": "Casa Vargas — aula simulada 101"
         }
       ]
     },
@@ -4743,12 +4677,6 @@
       "sesiones": [
         {
           "dia": "Mie",
-          "inicio": 12.166666666666666,
-          "fin": 13.666666666666666,
-          "salon": "Casa Fundadores — aula simulada 601"
-        },
-        {
-          "dia": "Vie",
           "inicio": 12.166666666666666,
           "fin": 13.666666666666666,
           "salon": "Casa Fundadores — aula simulada 601"
@@ -4767,12 +4695,6 @@
           "inicio": 10.5,
           "fin": 12,
           "salon": "Casa Incolda — aula simulada 601"
-        },
-        {
-          "dia": "Jue",
-          "inicio": 10.5,
-          "fin": 12,
-          "salon": "Casa Incolda — aula simulada 601"
         }
       ]
     },
@@ -4785,12 +4707,6 @@
       "sesiones": [
         {
           "dia": "Lun",
-          "inicio": 12.166666666666666,
-          "fin": 13.666666666666666,
-          "salon": "Casa Incolda — aula simulada 101"
-        },
-        {
-          "dia": "Mie",
           "inicio": 12.166666666666666,
           "fin": 13.666666666666666,
           "salon": "Casa Incolda — aula simulada 101"
@@ -4809,12 +4725,6 @@
           "inicio": 7,
           "fin": 8.5,
           "salon": "Casa Incolda — aula simulada 501"
-        },
-        {
-          "dia": "Mie",
-          "inicio": 7,
-          "fin": 8.5,
-          "salon": "Casa Incolda — aula simulada 501"
         }
       ]
     },
@@ -4827,12 +4737,6 @@
       "sesiones": [
         {
           "dia": "Mie",
-          "inicio": 7,
-          "fin": 8.5,
-          "salon": "Casa Diag 34 II — aula simulada 401"
-        },
-        {
-          "dia": "Vie",
           "inicio": 7,
           "fin": 8.5,
           "salon": "Casa Diag 34 II — aula simulada 401"
