@@ -197,6 +197,17 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
     }
   });
 
+  it('si la selección choca con un día bloqueado, se mantiene y se avisa', () => {
+    const sel = oferta.grupos.find((g) => g.esSeleccion)!;
+    const dia = sel.sesiones[0].dia;
+    const r = generarHorarios(entrada({}, { seleccionNrc: sel.nrc, diasBloqueados: ['Sab', dia] }));
+    expect(r.avisos.some((a) => a.includes('entrena') && a.includes('Dejamos el entrenamiento'))).toBe(true);
+    for (const h of r.opciones) {
+      expect(h.asignaciones.some((a) => a.grupo.nrc === sel.nrc)).toBe(true);
+      expect(sinCruces(h.asignaciones)).toBe(true);
+    }
+  });
+
   it('bienestar solo usa las actividades aceptadas', () => {
     for (const h of generarHorarios(entrada()).opciones) {
       const b = h.asignaciones.find((a) => a.materiaId === 'b6');

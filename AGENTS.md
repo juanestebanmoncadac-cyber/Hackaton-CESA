@@ -15,7 +15,7 @@ Verifica con `git config user.email` antes de hacer commit. Si ya hiciste un com
 
 ## Reglas del repositorio
 
-- Se trabaja directo en `main`; cada `git push` a `main` publica en https://hackaton-cesa.vercel.app.
+- Se trabaja directo en `main`; cada `git push` a `main` publica en https://horariocesa.vercel.app.
 - Antes de subir, corre `npm test` y `npm run build`. No subas si alguno falla.
 - Haz `git pull` antes de empezar y antes de subir, para no pisar el trabajo de otros.
 - No cambies `src/types.ts` (contrato de datos) sin avisar al equipo: todos dependen de él.

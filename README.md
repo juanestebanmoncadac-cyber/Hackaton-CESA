@@ -1,6 +1,6 @@
 # HorarioCESA — Plataforma de Horarios con IA
 
-Prototipo del Hackatón CESA (entrega: jueves 24 de septiembre de 2026).
+Prototipo del Hackatón CESA (entrega: jueves 24 de septiembre de 2026). En línea: https://horariocesa.vercel.app
 
 El estudiante marca las materias que ya aprobó, elige qué quiere inscribir y con qué profesores, ordena sus prioridades y recibe **3 opciones de horario sin cruces**.
 
@@ -52,7 +52,7 @@ La app consume un único contrato `Oferta` definido en `src/types.ts`. Cuando TI
 1. Entrar a [vercel.com](https://vercel.com) con la cuenta de GitHub.
 2. **Add New → Project** → importar `Hackaton-CESA`.
 3. Vercel detecta Vite solo (build `npm run build`, salida `dist`). **Deploy.**
-4. Cada `git push` a `main` vuelve a publicar.
+4. Cada `git push` a `main` vuelve a publicar en https://horariocesa.vercel.app.
 
 ## Pendiente / opcional
 

@@ -30,7 +30,7 @@ import type {
   Sesion,
   SolicitudMateria,
 } from '../types';
-import { listaNatural } from './explicar';
+import { NOMBRE_DIA, fmtHora, listaNatural } from './explicar';
 
 export const PESOS_POSICION = [1, 0.75, 0.5, 0.3, 0.15];
 export const DIAS_HABILES: Dia[] = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie'];
@@ -264,12 +264,20 @@ export function generarHorarios(entrada: EntradaMotor): ResultadoMotor {
   const maxCreditos = Number.isFinite(pref.limiteCreditos) ? pref.limiteCreditos : pensum.limiteCreditosSemestre;
   const minCreditos = Math.min(Number.isFinite(pref.creditosMinimos) ? pref.creditosMinimos! : 0, maxCreditos);
 
-  // Selección deportiva: bloque fijo, solo si el estudiante la declaró
+  // Selección deportiva: bloque fijo, solo si el estudiante la declaró.
+  // Se incluye siempre (quitarla dejaría poner clases encima del entrenamiento);
+  // si choca con su hora mínima o un día bloqueado, se le avisa.
   const fijosBase: Asignacion[] = [];
   if (pref.seleccionNrc) {
     const sel = oferta.grupos.find((g) => g.nrc === pref.seleccionNrc && g.esSeleccion);
-    if (sel) fijosBase.push({ materiaId: 'SELECCION', grupo: sel });
-    else avisos.push('La selección deportiva que indicaste no está en la oferta.');
+    if (sel) {
+      fijosBase.push({ materiaId: 'SELECCION', grupo: sel });
+      const choques = sel.sesiones.filter((x) => x.inicio < pref.horaMinima || pref.diasBloqueados.includes(x.dia));
+      if (choques.length) {
+        const cuando = listaNatural(choques.map((x) => `el ${NOMBRE_DIA[x.dia]} a las ${fmtHora(x.inicio)}`));
+        avisos.push(`Tu ${sel.actividad?.toLowerCase() ?? 'selección'} entrena ${cuando}, que es antes de tu hora mínima o un día que bloqueaste. Dejamos el entrenamiento en tu horario porque es fijo; revisa esas restricciones.`);
+      }
+    } else avisos.push('La selección deportiva que indicaste no está en la oferta.');
   }
 
   const ranuras: Ranura[] = [];
