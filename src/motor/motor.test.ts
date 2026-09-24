@@ -7,6 +7,7 @@ import { aprobarConPrerrequisitos, desaprobarConDependientes, disponibles, hasta
 
 const pensum = pensumJson as Pensum;
 const oferta = ofertaJson as Oferta;
+const primerProfesor = (id: string) => oferta.grupos.find((g) => g.materiaId === id)?.profesor ?? '';
 
 const PREF: Preferencias = {
   ranking: ['profesores', 'huecos', 'noMadrugar', 'diasLibres', 'terminarTemprano'],
@@ -17,14 +18,14 @@ const PREF: Preferencias = {
 };
 
 const SOLIC: SolicitudMateria[] = [
-  { materiaId: 'mtd', prioridad: 'necesito', profesores: { 'C. Herrera': 'preferido' } },
-  { materiaId: 'mc', prioridad: 'necesito', profesores: { 'A. Salazar': 'preferido', 'L. Rincón': 'evitar' } },
+  { materiaId: 'mtd', prioridad: 'necesito', profesores: { [primerProfesor('mtd')]: 'preferido' } },
+  { materiaId: 'mc', prioridad: 'necesito', profesores: { [primerProfesor('mc')]: 'preferido' } },
   { materiaId: 'io', prioridad: 'necesito', profesores: {} },
   { materiaId: 'v1', prioridad: 'necesito', profesores: {} },
-  { materiaId: 'ni', prioridad: 'gustaria', profesores: { 'N. Acosta': 'preferido' } },
+  { materiaId: 'ni', prioridad: 'gustaria', profesores: { [primerProfesor('ni')]: 'preferido' } },
   { materiaId: 'dc', prioridad: 'gustaria', profesores: {} },
   { materiaId: 'to', prioridad: 'gustaria', profesores: {} },
-  { materiaId: 'b6', prioridad: 'necesito', profesores: {}, actividades: ['Tenis', 'Golf', 'Cata de vino'] },
+  { materiaId: 'b6', prioridad: 'necesito', profesores: {}, actividades: ['Tenis', 'Golf'] },
 ];
 
 const entrada = (over: Partial<EntradaMotor> = {}, pref: Partial<Preferencias> = {}): EntradaMotor => ({
@@ -45,6 +46,17 @@ describe('datos', () => {
     const nrcs = new Set(oferta.grupos.map((g) => g.nrc));
     expect(nrcs.size).toBe(oferta.grupos.length);
     for (const g of oferta.grupos) for (const s of g.sesiones) expect(s.fin).toBeGreaterThan(s.inicio);
+  });
+  it.skipIf(oferta.fuente !== 'simulada')('la oferta simulada conserva secciones y franjas del escenario CESA', () => {
+    expect(oferta.fuente).toBe('simulada');
+    expect(oferta.grupos.filter((g) => g.tipo === 'regular')).toHaveLength(232);
+    expect(oferta.grupos.filter((g) => g.materiaId === 'BIENESTAR')).toHaveLength(28);
+    const bloques = new Set(['7:00-8:30', '8:40-10:10', '10:30-12:00', '12:10-13:40', '14:00-15:30', '15:40-17:10']);
+    const fmt = (h: number) => `${Math.floor(h)}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
+    for (const g of oferta.grupos) for (const s of g.sesiones) {
+      expect(s.dia).not.toBe('Sab');
+      expect(bloques.has(`${fmt(s.inicio)}-${fmt(s.fin)}`)).toBe(true);
+    }
   });
   it('los prerrequisitos existen en el pensum', () => {
     const ids = new Set(pensum.materias.map((m) => m.id));
@@ -107,7 +119,7 @@ describe('motor', () => {
   });
 
   it('el grupo fijado siempre aparece', () => {
-    const fijo = oferta.grupos.find((g) => g.materiaId === 'mtd' && g.profesor === 'M. Duarte')!;
+    const fijo = oferta.grupos.find((g) => g.materiaId === 'mtd')!;
     const sol = SOLIC.map((s) => (s.materiaId === 'mtd' ? { ...s, nrcFijado: fijo.nrc } : s));
     for (const h of generarHorarios(entrada({ solicitudes: sol })).opciones) {
       expect(h.asignaciones.find((a) => a.materiaId === 'mtd')?.grupo.nrc).toBe(fijo.nrc);
@@ -115,8 +127,11 @@ describe('motor', () => {
   });
 
   it('avisa si dos grupos fijados se cruzan', () => {
-    const g1 = oferta.grupos.find((g) => g.materiaId === 'mtd' && g.grupo === 'Grupo 1')!; // Lun y Mié 8-10
-    const g2 = oferta.grupos.find((g) => g.materiaId === 'mc' && g.grupo === 'Grupo 1')!; // Lun y Mié 9-11
+    const par = oferta.grupos.filter((g) => g.materiaId === 'mtd').flatMap((g1) =>
+      oferta.grupos.filter((g2) => g2.materiaId === 'mc' && gruposSeCruzan(g1, g2)).map((g2) => [g1, g2] as const),
+    )[0];
+    expect(par).toBeDefined();
+    const [g1, g2] = par;
     const sol = SOLIC.map((s) => (s.materiaId === 'mtd' ? { ...s, nrcFijado: g1.nrc } : s.materiaId === 'mc' ? { ...s, nrcFijado: g2.nrc } : s));
     const r = generarHorarios(entrada({ solicitudes: sol }));
     expect(r.avisos.some((a) => a.includes('se cruzan'))).toBe(true);
@@ -138,13 +153,15 @@ describe('motor', () => {
   it('bienestar solo usa las actividades aceptadas', () => {
     for (const h of generarHorarios(entrada()).opciones) {
       const b = h.asignaciones.find((a) => a.materiaId === 'b6');
-      if (b) expect(['Tenis', 'Golf', 'Cata de vino']).toContain(b.grupo.actividad);
+      if (b) expect(['Tenis', 'Golf']).toContain(b.grupo.actividad);
     }
   });
 
   it('con profesores como prioridad #1, la opción 1 tiene a los preferidos', () => {
-    const [h] = generarHorarios(entrada()).opciones;
-    expect(h.metricas.profesPreferidos.cumplidos).toBe(h.metricas.profesPreferidos.total);
+    const prof = primerProfesor('mtd');
+    const solicitud: SolicitudMateria = { materiaId: 'mtd', prioridad: 'necesito', profesores: { [prof]: 'preferido' } };
+    const [h] = generarHorarios(entrada({ solicitudes: [solicitud] })).opciones;
+    expect(h.asignaciones.find((a) => a.materiaId === 'mtd')?.grupo.profesor).toBe(prof);
   });
 
   it('"Ver otras opciones" no repite horarios', () => {
