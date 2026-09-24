@@ -9,7 +9,11 @@ import { disponibles, hastaSemestre } from '../motor/pensum';
 
 export const PENSUM = pensumJson as Pensum;
 export const OFERTA = ofertaJson as Oferta;
-const DATOS_VERSION = `${OFERTA.periodo}:${OFERTA.generadoEn}:${OFERTA.grupos.map((g) => g.nrc).join(',')}`;
+const DATOS_VERSION = (() => {
+  let hash = 2166136261;
+  for (const char of JSON.stringify(OFERTA)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+  return `${OFERTA.periodo}:${(hash >>> 0).toString(16)}`;
+})();
 
 export interface EstadoMateria {
   sel: boolean;
