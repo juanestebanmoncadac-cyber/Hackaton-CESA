@@ -55,7 +55,29 @@ describe('datos', () => {
     const fmt = (h: number) => `${Math.floor(h)}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
     for (const g of oferta.grupos) for (const s of g.sesiones) {
       expect(s.dia).not.toBe('Sab');
-      expect(bloques.has(`${fmt(s.inicio)}-${fmt(s.fin)}`)).toBe(true);
+      if (!['v1', 'v2'].includes(g.materiaId)) {
+        expect(bloques.has(`${fmt(s.inicio)}-${fmt(s.fin)}`)).toBe(true);
+      }
+    }
+  });
+  it.skipIf(oferta.fuente !== 'simulada')('aplica la frecuencia semanal y los horarios fijos acordados', () => {
+    const tresEncuentros = new Set(['ma1', 'ma2', 'ep', 'ea', 'mf']);
+    for (const grupo of oferta.grupos.filter((g) => g.tipo === 'regular')) {
+      const esperados = grupo.materiaId === 'v1' || grupo.materiaId === 'v2'
+        ? 1 : tresEncuentros.has(grupo.materiaId) ? 3 : 2;
+      expect(grupo.sesiones).toHaveLength(esperados);
+      if (grupo.materiaId === 'v1') {
+        expect(grupo.sesiones[0]).toMatchObject({ dia: 'Mar', inicio: 8, fin: 12 + 10 / 60 });
+      }
+      if (grupo.materiaId === 'v2') {
+        expect(grupo.sesiones[0]).toMatchObject({ dia: 'Mie', inicio: 8, fin: 13 + 40 / 60 });
+      }
+      if (grupo.materiaId === 'pie') {
+        expect(grupo.sesiones.map(({ dia, inicio, fin }) => ({ dia, inicio, fin }))).toEqual([
+          { dia: 'Mar', inicio: 14, fin: 15.5 },
+          { dia: 'Jue', inicio: 14, fin: 15.5 },
+        ]);
+      }
     }
   });
   it('los prerrequisitos existen en el pensum', () => {
@@ -119,7 +141,7 @@ describe.skipIf(oferta.fuente !== 'simulada')('motor con escenario de prueba', (
   });
 
   it('el grupo fijado siempre aparece', () => {
-    const fijo = oferta.grupos.find((g) => g.materiaId === 'mtd')!;
+    const fijo = generarHorarios(entrada()).opciones[0].asignaciones.find((a) => a.materiaId === 'mtd')!.grupo;
     const sol = SOLIC.map((s) => (s.materiaId === 'mtd' ? { ...s, nrcFijado: fijo.nrc } : s));
     for (const h of generarHorarios(entrada({ solicitudes: sol })).opciones) {
       expect(h.asignaciones.find((a) => a.materiaId === 'mtd')?.grupo.nrc).toBe(fijo.nrc);
