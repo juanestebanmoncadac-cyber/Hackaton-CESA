@@ -1,0 +1,5585 @@
+{
+  "periodo": "2027-1",
+  "fuente": "Escenario sintético de backtesting; no representa la oferta oficial del CESA",
+  "estudiantesPorSemestre": 100,
+  "secciones": [
+    {
+      "nombre": "Matemáticas Aplicadas 1",
+      "nrc": "SIM10000",
+      "grupo": "S01",
+      "profesor": "Ana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 1",
+      "nrc": "SIM10001",
+      "grupo": "S02",
+      "profesor": "Ana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 1",
+      "nrc": "SIM10002",
+      "grupo": "S03",
+      "profesor": "Laura García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 1",
+      "nrc": "SIM10003",
+      "grupo": "S04",
+      "profesor": "Laura García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 2",
+      "nrc": "SIM10004",
+      "grupo": "S01",
+      "profesor": "María García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 2",
+      "nrc": "SIM10005",
+      "grupo": "S02",
+      "profesor": "María García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 2",
+      "nrc": "SIM10006",
+      "grupo": "S03",
+      "profesor": "Sofía García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Aplicadas 2",
+      "nrc": "SIM10007",
+      "grupo": "S04",
+      "profesor": "Sofía García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística y Probabilidad",
+      "nrc": "SIM10008",
+      "grupo": "S01",
+      "profesor": "Camila García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística y Probabilidad",
+      "nrc": "SIM10009",
+      "grupo": "S02",
+      "profesor": "Camila García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística y Probabilidad",
+      "nrc": "SIM10010",
+      "grupo": "S03",
+      "profesor": "Paula García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística y Probabilidad",
+      "nrc": "SIM10011",
+      "grupo": "S04",
+      "profesor": "Paula García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística Aplicada",
+      "nrc": "SIM10012",
+      "grupo": "S01",
+      "profesor": "Valentina García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística Aplicada",
+      "nrc": "SIM10013",
+      "grupo": "S02",
+      "profesor": "Valentina García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística Aplicada",
+      "nrc": "SIM10014",
+      "grupo": "S03",
+      "profesor": "Daniela García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Estadística Aplicada",
+      "nrc": "SIM10015",
+      "grupo": "S04",
+      "profesor": "Daniela García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 1",
+      "nrc": "SIM10016",
+      "grupo": "S01",
+      "profesor": "Isabel García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 1",
+      "nrc": "SIM10017",
+      "grupo": "S02",
+      "profesor": "Isabel García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 1",
+      "nrc": "SIM10018",
+      "grupo": "S03",
+      "profesor": "Natalia García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 1",
+      "nrc": "SIM10019",
+      "grupo": "S04",
+      "profesor": "Natalia García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 2",
+      "nrc": "SIM10020",
+      "grupo": "S01",
+      "profesor": "Andrés García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 2",
+      "nrc": "SIM10021",
+      "grupo": "S02",
+      "profesor": "Andrés García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 2",
+      "nrc": "SIM10022",
+      "grupo": "S03",
+      "profesor": "Juan García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Visitas 2",
+      "nrc": "SIM10023",
+      "grupo": "S04",
+      "profesor": "Juan García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Escrita",
+      "nrc": "SIM10024",
+      "grupo": "S01",
+      "profesor": "Carlos García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Escrita",
+      "nrc": "SIM10025",
+      "grupo": "S02",
+      "profesor": "Carlos García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Escrita",
+      "nrc": "SIM10026",
+      "grupo": "S03",
+      "profesor": "David García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Escrita",
+      "nrc": "SIM10027",
+      "grupo": "S04",
+      "profesor": "David García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Oral",
+      "nrc": "SIM10028",
+      "grupo": "S01",
+      "profesor": "Felipe García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Oral",
+      "nrc": "SIM10029",
+      "grupo": "S02",
+      "profesor": "Felipe García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Oral",
+      "nrc": "SIM10030",
+      "grupo": "S03",
+      "profesor": "Santiago García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Comunicación Oral",
+      "nrc": "SIM10031",
+      "grupo": "S04",
+      "profesor": "Santiago García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Operaciones",
+      "nrc": "SIM10032",
+      "grupo": "S01",
+      "profesor": "Julián García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Operaciones",
+      "nrc": "SIM10033",
+      "grupo": "S02",
+      "profesor": "Julián García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Operaciones",
+      "nrc": "SIM10034",
+      "grupo": "S03",
+      "profesor": "Nicolás García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Operaciones",
+      "nrc": "SIM10035",
+      "grupo": "S04",
+      "profesor": "Nicolás García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Operaciones",
+      "nrc": "SIM10036",
+      "grupo": "S01",
+      "profesor": "Diego García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Operaciones",
+      "nrc": "SIM10037",
+      "grupo": "S02",
+      "profesor": "Diego García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Operaciones",
+      "nrc": "SIM10038",
+      "grupo": "S03",
+      "profesor": "Alejandro García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Operaciones",
+      "nrc": "SIM10039",
+      "grupo": "S04",
+      "profesor": "Alejandro García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Gerencia de la Cadena de Suministro",
+      "nrc": "SIM10040",
+      "grupo": "S01",
+      "profesor": "Catalina García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Gerencia de la Cadena de Suministro",
+      "nrc": "SIM10041",
+      "grupo": "S02",
+      "profesor": "Catalina García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Gerencia de la Cadena de Suministro",
+      "nrc": "SIM10042",
+      "grupo": "S03",
+      "profesor": "Diana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Gerencia de la Cadena de Suministro",
+      "nrc": "SIM10043",
+      "grupo": "S04",
+      "profesor": "Diana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción a la Economía",
+      "nrc": "SIM10044",
+      "grupo": "S01",
+      "profesor": "Marcela García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción a la Economía",
+      "nrc": "SIM10045",
+      "grupo": "S02",
+      "profesor": "Marcela García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción a la Economía",
+      "nrc": "SIM10046",
+      "grupo": "S03",
+      "profesor": "Sandra García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción a la Economía",
+      "nrc": "SIM10047",
+      "grupo": "S04",
+      "profesor": "Sandra García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Microeconomía",
+      "nrc": "SIM10048",
+      "grupo": "S01",
+      "profesor": "Tatiana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Microeconomía",
+      "nrc": "SIM10049",
+      "grupo": "S02",
+      "profesor": "Tatiana García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Microeconomía",
+      "nrc": "SIM10050",
+      "grupo": "S03",
+      "profesor": "Esteban García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Microeconomía",
+      "nrc": "SIM10051",
+      "grupo": "S04",
+      "profesor": "Esteban García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Macroeconomía",
+      "nrc": "SIM10052",
+      "grupo": "S01",
+      "profesor": "Sebastián García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Macroeconomía",
+      "nrc": "SIM10053",
+      "grupo": "S02",
+      "profesor": "Sebastián García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Macroeconomía",
+      "nrc": "SIM10054",
+      "grupo": "S03",
+      "profesor": "Ricardo García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Macroeconomía",
+      "nrc": "SIM10055",
+      "grupo": "S04",
+      "profesor": "Ricardo García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Económica",
+      "nrc": "SIM10056",
+      "grupo": "S01",
+      "profesor": "Mauricio García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Económica",
+      "nrc": "SIM10057",
+      "grupo": "S02",
+      "profesor": "Mauricio García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Económica",
+      "nrc": "SIM10058",
+      "grupo": "S03",
+      "profesor": "Fernando García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Económica",
+      "nrc": "SIM10059",
+      "grupo": "S04",
+      "profesor": "Fernando García",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Coyuntura Económica",
+      "nrc": "SIM10060",
+      "grupo": "S01",
+      "profesor": "Ana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Coyuntura Económica",
+      "nrc": "SIM10061",
+      "grupo": "S02",
+      "profesor": "Ana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Coyuntura Económica",
+      "nrc": "SIM10062",
+      "grupo": "S03",
+      "profesor": "Laura Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Coyuntura Económica",
+      "nrc": "SIM10063",
+      "grupo": "S04",
+      "profesor": "Laura Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario Preparación Vida Laboral",
+      "nrc": "SIM10064",
+      "grupo": "S01",
+      "profesor": "María Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario Preparación Vida Laboral",
+      "nrc": "SIM10065",
+      "grupo": "S02",
+      "profesor": "María Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario Preparación Vida Laboral",
+      "nrc": "SIM10066",
+      "grupo": "S03",
+      "profesor": "Sofía Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario Preparación Vida Laboral",
+      "nrc": "SIM10067",
+      "grupo": "S04",
+      "profesor": "Sofía Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Principios de Mercadeo",
+      "nrc": "SIM10068",
+      "grupo": "S01",
+      "profesor": "Camila Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Principios de Mercadeo",
+      "nrc": "SIM10069",
+      "grupo": "S02",
+      "profesor": "Camila Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Principios de Mercadeo",
+      "nrc": "SIM10070",
+      "grupo": "S03",
+      "profesor": "Paula Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Principios de Mercadeo",
+      "nrc": "SIM10071",
+      "grupo": "S04",
+      "profesor": "Paula Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Mercados",
+      "nrc": "SIM10072",
+      "grupo": "S01",
+      "profesor": "Valentina Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Mercados",
+      "nrc": "SIM10073",
+      "grupo": "S02",
+      "profesor": "Valentina Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Mercados",
+      "nrc": "SIM10074",
+      "grupo": "S03",
+      "profesor": "Daniela Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Investigación de Mercados",
+      "nrc": "SIM10075",
+      "grupo": "S04",
+      "profesor": "Daniela Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Comercial",
+      "nrc": "SIM10076",
+      "grupo": "S01",
+      "profesor": "Isabel Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Comercial",
+      "nrc": "SIM10077",
+      "grupo": "S02",
+      "profesor": "Isabel Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Comercial",
+      "nrc": "SIM10078",
+      "grupo": "S03",
+      "profesor": "Natalia Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Comercial",
+      "nrc": "SIM10079",
+      "grupo": "S04",
+      "profesor": "Natalia Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Marketing Digital",
+      "nrc": "SIM10080",
+      "grupo": "S01",
+      "profesor": "Andrés Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Marketing Digital",
+      "nrc": "SIM10081",
+      "grupo": "S02",
+      "profesor": "Andrés Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Marketing Digital",
+      "nrc": "SIM10082",
+      "grupo": "S03",
+      "profesor": "Juan Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Marketing Digital",
+      "nrc": "SIM10083",
+      "grupo": "S04",
+      "profesor": "Juan Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Estratégica de Mercadeo",
+      "nrc": "SIM10084",
+      "grupo": "S01",
+      "profesor": "Carlos Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Estratégica de Mercadeo",
+      "nrc": "SIM10085",
+      "grupo": "S02",
+      "profesor": "Carlos Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Estratégica de Mercadeo",
+      "nrc": "SIM10086",
+      "grupo": "S03",
+      "profesor": "David Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Dirección Estratégica de Mercadeo",
+      "nrc": "SIM10087",
+      "grupo": "S04",
+      "profesor": "David Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Empresarial",
+      "nrc": "SIM10088",
+      "grupo": "S01",
+      "profesor": "Felipe Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Empresarial",
+      "nrc": "SIM10089",
+      "grupo": "S02",
+      "profesor": "Felipe Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Empresarial",
+      "nrc": "SIM10090",
+      "grupo": "S03",
+      "profesor": "Santiago Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Historia Empresarial",
+      "nrc": "SIM10091",
+      "grupo": "S04",
+      "profesor": "Santiago Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Personal",
+      "nrc": "SIM10092",
+      "grupo": "S01",
+      "profesor": "Julián Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Personal",
+      "nrc": "SIM10093",
+      "grupo": "S02",
+      "profesor": "Julián Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Personal",
+      "nrc": "SIM10094",
+      "grupo": "S03",
+      "profesor": "Nicolás Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Personal",
+      "nrc": "SIM10095",
+      "grupo": "S04",
+      "profesor": "Nicolás Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Organizacional",
+      "nrc": "SIM10096",
+      "grupo": "S01",
+      "profesor": "Diego Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Organizacional",
+      "nrc": "SIM10097",
+      "grupo": "S02",
+      "profesor": "Diego Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Organizacional",
+      "nrc": "SIM10098",
+      "grupo": "S03",
+      "profesor": "Alejandro Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Transformación Organizacional",
+      "nrc": "SIM10099",
+      "grupo": "S04",
+      "profesor": "Alejandro Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Liderazgo",
+      "nrc": "SIM10100",
+      "grupo": "S01",
+      "profesor": "Catalina Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Liderazgo",
+      "nrc": "SIM10101",
+      "grupo": "S02",
+      "profesor": "Catalina Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Liderazgo",
+      "nrc": "SIM10102",
+      "grupo": "S03",
+      "profesor": "Diana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Liderazgo",
+      "nrc": "SIM10103",
+      "grupo": "S04",
+      "profesor": "Diana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Fundamentos de Administración",
+      "nrc": "SIM10104",
+      "grupo": "S01",
+      "profesor": "Marcela Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Fundamentos de Administración",
+      "nrc": "SIM10105",
+      "grupo": "S02",
+      "profesor": "Marcela Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Fundamentos de Administración",
+      "nrc": "SIM10106",
+      "grupo": "S03",
+      "profesor": "Sandra Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Fundamentos de Administración",
+      "nrc": "SIM10107",
+      "grupo": "S04",
+      "profesor": "Sandra Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Pensamiento Administrativo",
+      "nrc": "SIM10108",
+      "grupo": "S01",
+      "profesor": "Tatiana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Pensamiento Administrativo",
+      "nrc": "SIM10109",
+      "grupo": "S02",
+      "profesor": "Tatiana Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Pensamiento Administrativo",
+      "nrc": "SIM10110",
+      "grupo": "S03",
+      "profesor": "Esteban Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Pensamiento Administrativo",
+      "nrc": "SIM10111",
+      "grupo": "S04",
+      "profesor": "Esteban Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación y Control Estratégico",
+      "nrc": "SIM10112",
+      "grupo": "S01",
+      "profesor": "Sebastián Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación y Control Estratégico",
+      "nrc": "SIM10113",
+      "grupo": "S02",
+      "profesor": "Sebastián Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación y Control Estratégico",
+      "nrc": "SIM10114",
+      "grupo": "S03",
+      "profesor": "Ricardo Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación y Control Estratégico",
+      "nrc": "SIM10115",
+      "grupo": "S04",
+      "profesor": "Ricardo Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Diseño Organizacional",
+      "nrc": "SIM10116",
+      "grupo": "S01",
+      "profesor": "Mauricio Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Diseño Organizacional",
+      "nrc": "SIM10117",
+      "grupo": "S02",
+      "profesor": "Mauricio Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Diseño Organizacional",
+      "nrc": "SIM10118",
+      "grupo": "S03",
+      "profesor": "Fernando Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Diseño Organizacional",
+      "nrc": "SIM10119",
+      "grupo": "S04",
+      "profesor": "Fernando Rodríguez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Negocios Internacionales",
+      "nrc": "SIM10120",
+      "grupo": "S01",
+      "profesor": "Ana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Negocios Internacionales",
+      "nrc": "SIM10121",
+      "grupo": "S02",
+      "profesor": "Ana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Negocios Internacionales",
+      "nrc": "SIM10122",
+      "grupo": "S03",
+      "profesor": "Laura Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Negocios Internacionales",
+      "nrc": "SIM10123",
+      "grupo": "S04",
+      "profesor": "Laura Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Sostenibilidad Empresarial",
+      "nrc": "SIM10124",
+      "grupo": "S01",
+      "profesor": "María Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Sostenibilidad Empresarial",
+      "nrc": "SIM10125",
+      "grupo": "S02",
+      "profesor": "María Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Sostenibilidad Empresarial",
+      "nrc": "SIM10126",
+      "grupo": "S03",
+      "profesor": "Sofía Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Sostenibilidad Empresarial",
+      "nrc": "SIM10127",
+      "grupo": "S04",
+      "profesor": "Sofía Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Contabilidad Básica",
+      "nrc": "SIM10128",
+      "grupo": "S01",
+      "profesor": "Camila Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Contabilidad Básica",
+      "nrc": "SIM10129",
+      "grupo": "S02",
+      "profesor": "Camila Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Contabilidad Básica",
+      "nrc": "SIM10130",
+      "grupo": "S03",
+      "profesor": "Paula Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Contabilidad Básica",
+      "nrc": "SIM10131",
+      "grupo": "S04",
+      "profesor": "Paula Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Costos",
+      "nrc": "SIM10132",
+      "grupo": "S01",
+      "profesor": "Valentina Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Costos",
+      "nrc": "SIM10133",
+      "grupo": "S02",
+      "profesor": "Valentina Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Costos",
+      "nrc": "SIM10134",
+      "grupo": "S03",
+      "profesor": "Daniela Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración de Costos",
+      "nrc": "SIM10135",
+      "grupo": "S04",
+      "profesor": "Daniela Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Análisis Financiero",
+      "nrc": "SIM10136",
+      "grupo": "S01",
+      "profesor": "Isabel Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Análisis Financiero",
+      "nrc": "SIM10137",
+      "grupo": "S02",
+      "profesor": "Isabel Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Análisis Financiero",
+      "nrc": "SIM10138",
+      "grupo": "S03",
+      "profesor": "Natalia Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Análisis Financiero",
+      "nrc": "SIM10139",
+      "grupo": "S04",
+      "profesor": "Natalia Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Financieras",
+      "nrc": "SIM10140",
+      "grupo": "S01",
+      "profesor": "Andrés Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Financieras",
+      "nrc": "SIM10141",
+      "grupo": "S02",
+      "profesor": "Andrés Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Financieras",
+      "nrc": "SIM10142",
+      "grupo": "S03",
+      "profesor": "Juan Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Matemáticas Financieras",
+      "nrc": "SIM10143",
+      "grupo": "S04",
+      "profesor": "Juan Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración Financiera",
+      "nrc": "SIM10144",
+      "grupo": "S01",
+      "profesor": "Carlos Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración Financiera",
+      "nrc": "SIM10145",
+      "grupo": "S02",
+      "profesor": "Carlos Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración Financiera",
+      "nrc": "SIM10146",
+      "grupo": "S03",
+      "profesor": "David Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Administración Financiera",
+      "nrc": "SIM10147",
+      "grupo": "S04",
+      "profesor": "David Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Mercado de Capitales",
+      "nrc": "SIM10148",
+      "grupo": "S01",
+      "profesor": "Felipe Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Mercado de Capitales",
+      "nrc": "SIM10149",
+      "grupo": "S02",
+      "profesor": "Felipe Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Mercado de Capitales",
+      "nrc": "SIM10150",
+      "grupo": "S03",
+      "profesor": "Santiago Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Mercado de Capitales",
+      "nrc": "SIM10151",
+      "grupo": "S04",
+      "profesor": "Santiago Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación Financiera",
+      "nrc": "SIM10152",
+      "grupo": "S01",
+      "profesor": "Julián Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación Financiera",
+      "nrc": "SIM10153",
+      "grupo": "S02",
+      "profesor": "Julián Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación Financiera",
+      "nrc": "SIM10154",
+      "grupo": "S03",
+      "profesor": "Nicolás Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Planeación Financiera",
+      "nrc": "SIM10155",
+      "grupo": "S04",
+      "profesor": "Nicolás Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Creatividad e Innovación",
+      "nrc": "SIM10156",
+      "grupo": "S01",
+      "profesor": "Diego Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Creatividad e Innovación",
+      "nrc": "SIM10157",
+      "grupo": "S02",
+      "profesor": "Diego Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Creatividad e Innovación",
+      "nrc": "SIM10158",
+      "grupo": "S03",
+      "profesor": "Alejandro Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Creatividad e Innovación",
+      "nrc": "SIM10159",
+      "grupo": "S04",
+      "profesor": "Alejandro Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión Humana",
+      "nrc": "SIM10160",
+      "grupo": "S01",
+      "profesor": "Catalina Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión Humana",
+      "nrc": "SIM10161",
+      "grupo": "S02",
+      "profesor": "Catalina Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión Humana",
+      "nrc": "SIM10162",
+      "grupo": "S03",
+      "profesor": "Diana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión Humana",
+      "nrc": "SIM10163",
+      "grupo": "S04",
+      "profesor": "Diana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Comportamiento Organizacional",
+      "nrc": "SIM10164",
+      "grupo": "S01",
+      "profesor": "Marcela Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Comportamiento Organizacional",
+      "nrc": "SIM10165",
+      "grupo": "S02",
+      "profesor": "Marcela Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Comportamiento Organizacional",
+      "nrc": "SIM10166",
+      "grupo": "S03",
+      "profesor": "Sandra Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Comportamiento Organizacional",
+      "nrc": "SIM10167",
+      "grupo": "S04",
+      "profesor": "Sandra Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión de Innovación",
+      "nrc": "SIM10168",
+      "grupo": "S01",
+      "profesor": "Tatiana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión de Innovación",
+      "nrc": "SIM10169",
+      "grupo": "S02",
+      "profesor": "Tatiana Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión de Innovación",
+      "nrc": "SIM10170",
+      "grupo": "S03",
+      "profesor": "Esteban Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión de Innovación",
+      "nrc": "SIM10171",
+      "grupo": "S04",
+      "profesor": "Esteban Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "TIC Aplicadas a la Toma de Decisiones",
+      "nrc": "SIM10172",
+      "grupo": "S01",
+      "profesor": "Sebastián Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "TIC Aplicadas a la Toma de Decisiones",
+      "nrc": "SIM10173",
+      "grupo": "S02",
+      "profesor": "Sebastián Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "TIC Aplicadas a la Toma de Decisiones",
+      "nrc": "SIM10174",
+      "grupo": "S03",
+      "profesor": "Ricardo Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "TIC Aplicadas a la Toma de Decisiones",
+      "nrc": "SIM10175",
+      "grupo": "S04",
+      "profesor": "Ricardo Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Modelos para la Toma de Decisiones",
+      "nrc": "SIM10176",
+      "grupo": "S01",
+      "profesor": "Mauricio Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Modelos para la Toma de Decisiones",
+      "nrc": "SIM10177",
+      "grupo": "S02",
+      "profesor": "Mauricio Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Modelos para la Toma de Decisiones",
+      "nrc": "SIM10178",
+      "grupo": "S03",
+      "profesor": "Fernando Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Modelos para la Toma de Decisiones",
+      "nrc": "SIM10179",
+      "grupo": "S04",
+      "profesor": "Fernando Martínez",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción al Derecho",
+      "nrc": "SIM10180",
+      "grupo": "S01",
+      "profesor": "Ana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción al Derecho",
+      "nrc": "SIM10181",
+      "grupo": "S02",
+      "profesor": "Ana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción al Derecho",
+      "nrc": "SIM10182",
+      "grupo": "S03",
+      "profesor": "Laura López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Introducción al Derecho",
+      "nrc": "SIM10183",
+      "grupo": "S04",
+      "profesor": "Laura López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho de Negocios",
+      "nrc": "SIM10184",
+      "grupo": "S01",
+      "profesor": "María López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho de Negocios",
+      "nrc": "SIM10185",
+      "grupo": "S02",
+      "profesor": "María López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho de Negocios",
+      "nrc": "SIM10186",
+      "grupo": "S03",
+      "profesor": "Sofía López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho de Negocios",
+      "nrc": "SIM10187",
+      "grupo": "S04",
+      "profesor": "Sofía López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Laboral",
+      "nrc": "SIM10188",
+      "grupo": "S01",
+      "profesor": "Camila López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Vargas — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Laboral",
+      "nrc": "SIM10189",
+      "grupo": "S02",
+      "profesor": "Camila López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Laboral",
+      "nrc": "SIM10190",
+      "grupo": "S03",
+      "profesor": "Paula López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Laboral",
+      "nrc": "SIM10191",
+      "grupo": "S04",
+      "profesor": "Paula López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Tributario",
+      "nrc": "SIM10192",
+      "grupo": "S01",
+      "profesor": "Valentina López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Tributario",
+      "nrc": "SIM10193",
+      "grupo": "S02",
+      "profesor": "Valentina López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Tributario",
+      "nrc": "SIM10194",
+      "grupo": "S03",
+      "profesor": "Daniela López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Derecho Tributario",
+      "nrc": "SIM10195",
+      "grupo": "S04",
+      "profesor": "Daniela López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión para lo Público",
+      "nrc": "SIM10196",
+      "grupo": "S01",
+      "profesor": "Isabel López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión para lo Público",
+      "nrc": "SIM10197",
+      "grupo": "S02",
+      "profesor": "Isabel López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión para lo Público",
+      "nrc": "SIM10198",
+      "grupo": "S03",
+      "profesor": "Natalia López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Gestión para lo Público",
+      "nrc": "SIM10199",
+      "grupo": "S04",
+      "profesor": "Natalia López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Espíritu Emprendedor",
+      "nrc": "SIM10200",
+      "grupo": "S01",
+      "profesor": "Andrés López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Espíritu Emprendedor",
+      "nrc": "SIM10201",
+      "grupo": "S02",
+      "profesor": "Andrés López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Espíritu Emprendedor",
+      "nrc": "SIM10202",
+      "grupo": "S03",
+      "profesor": "Juan López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Espíritu Emprendedor",
+      "nrc": "SIM10203",
+      "grupo": "S04",
+      "profesor": "Juan López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 401"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Reto Empresarial",
+      "nrc": "SIM10204",
+      "grupo": "S01",
+      "profesor": "Carlos López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Diag 34 I — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Reto Empresarial",
+      "nrc": "SIM10205",
+      "grupo": "S02",
+      "profesor": "Carlos López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 101"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Fundadores — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Reto Empresarial",
+      "nrc": "SIM10206",
+      "grupo": "S03",
+      "profesor": "David López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Proyecto Integrador Reto Empresarial",
+      "nrc": "SIM10207",
+      "grupo": "S04",
+      "profesor": "David López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Mie",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 501"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario de Investigación",
+      "nrc": "SIM10208",
+      "grupo": "S01",
+      "profesor": "Felipe López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        },
+        {
+          "dia": "Mar",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario de Investigación",
+      "nrc": "SIM10209",
+      "grupo": "S02",
+      "profesor": "Felipe López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 101"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario de Investigación",
+      "nrc": "SIM10210",
+      "grupo": "S03",
+      "profesor": "Santiago López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        },
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Seminario de Investigación",
+      "nrc": "SIM10211",
+      "grupo": "S04",
+      "profesor": "Santiago López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        },
+        {
+          "dia": "Jue",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Diag 34 I — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 1",
+      "nrc": "SIM10212",
+      "grupo": "S01",
+      "profesor": "Julián López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 1",
+      "nrc": "SIM10213",
+      "grupo": "S02",
+      "profesor": "Julián López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Echavarría — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 1",
+      "nrc": "SIM10214",
+      "grupo": "S03",
+      "profesor": "Nicolás López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 1",
+      "nrc": "SIM10215",
+      "grupo": "S04",
+      "profesor": "Nicolás López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 2",
+      "nrc": "SIM10216",
+      "grupo": "S01",
+      "profesor": "Diego López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 2",
+      "nrc": "SIM10217",
+      "grupo": "S02",
+      "profesor": "Diego López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 14,
+          "fin": 15.5,
+          "salon": "Casa Fundadores — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 2",
+      "nrc": "SIM10218",
+      "grupo": "S03",
+      "profesor": "Alejandro López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 2",
+      "nrc": "SIM10219",
+      "grupo": "S04",
+      "profesor": "Alejandro López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 3",
+      "nrc": "SIM10220",
+      "grupo": "S01",
+      "profesor": "Catalina López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 15.666666666666666,
+          "fin": 17.166666666666668,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 3",
+      "nrc": "SIM10221",
+      "grupo": "S02",
+      "profesor": "Catalina López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 201"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 3",
+      "nrc": "SIM10222",
+      "grupo": "S03",
+      "profesor": "Diana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Vargas — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 3",
+      "nrc": "SIM10223",
+      "grupo": "S04",
+      "profesor": "Diana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Fundadores — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 4",
+      "nrc": "SIM10224",
+      "grupo": "S01",
+      "profesor": "Marcela López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mar",
+          "inicio": 10.5,
+          "fin": 12,
+          "salon": "Casa Incolda — aula simulada 601"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 4",
+      "nrc": "SIM10225",
+      "grupo": "S02",
+      "profesor": "Marcela López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Incolda — aula simulada 101"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 4",
+      "nrc": "SIM10226",
+      "grupo": "S03",
+      "profesor": "Sandra López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Lun",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Incolda — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Idiomas 4",
+      "nrc": "SIM10227",
+      "grupo": "S04",
+      "profesor": "Sandra López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 7,
+          "fin": 8.5,
+          "salon": "Casa Diag 34 II — aula simulada 401"
+        }
+      ]
+    },
+    {
+      "nombre": "Grandes Líderes",
+      "nrc": "SIM10228",
+      "grupo": "S01",
+      "profesor": "Tatiana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Mie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Vargas — aula simulada 501"
+        }
+      ]
+    },
+    {
+      "nombre": "Grandes Líderes",
+      "nrc": "SIM10229",
+      "grupo": "S02",
+      "profesor": "Tatiana López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 II — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Grandes Líderes",
+      "nrc": "SIM10230",
+      "grupo": "S03",
+      "profesor": "Esteban López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Jue",
+          "inicio": 12.166666666666666,
+          "fin": 13.666666666666666,
+          "salon": "Casa Diag 34 I — aula simulada 301"
+        }
+      ]
+    },
+    {
+      "nombre": "Grandes Líderes",
+      "nrc": "SIM10231",
+      "grupo": "S04",
+      "profesor": "Esteban López",
+      "cupos": 25,
+      "sesiones": [
+        {
+          "dia": "Vie",
+          "inicio": 8.666666666666666,
+          "fin": 10.166666666666666,
+          "salon": "Casa Echavarría — aula simulada 601"
+        }
+      ]
+    }
+  ],
+  "bienestar": [
+    {
+      "nombre": "Salidas Outdoors",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Baloncesto",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Bordados",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Carreras",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Danzas",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Dog Day",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Fútbol femenino",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Fútbol masculino",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Música",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Navegación en vela",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Ritmos latinos",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Voleibol",
+      "origen": "web oficial CESA: actividad extracurricular; no confirmada como electiva",
+      "elegible": false
+    },
+    {
+      "nombre": "Golf",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Tenis",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Rumba",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Entrenamiento funcional",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Yoga",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "HIIT",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Pilates",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Spinning",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Boxeo",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Escalada",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Natación",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Tenis de mesa",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Entrenamiento en suspensión TRX",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Squash",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Ajedrez",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Culinaria",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Mindfulness",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Enología",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Cata de café",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Panadería y repostería",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Diseño de marca",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Turismo sostenible",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Travesía por el mundo: cultura, arte y música",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Comunicación corporal asertiva",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Percusión latina y tradicional",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Fotografía",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Piano, cuerdas y canto",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    },
+    {
+      "nombre": "Astronomía",
+      "origen": "brochure oficial CESA",
+      "elegible": true
+    }
+  ]
+}
